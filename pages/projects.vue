@@ -6,13 +6,14 @@
       <h1 class="text-4xl font-bold mb-8">Our Projects</h1>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div v-for="project in projects" :key="project.id"
-          class="project-card p-6 border border-gray-300 rounded-lg shadow-lg">
+        <div v-for="(project, index) in projects" :key="project.id"
+          class="project-card p-6 border border-gray-300 rounded-lg shadow-lg"
+          :style="{ animationDelay: `${index * 0.2}s` }">
           <h2 class="text-2xl font-semibold mb-2">{{ project.title }}</h2>
           <p class="text-lg">{{ project.description }}</p>
           <div class="flex flex-wrap mt-4">
             <span v-for="tech in project.technologies" :key="tech"
-              class="border border-gray-600 text-gray-600 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded-lg">
+              class="border border-gray-400 text-gray-400 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded">
               {{ tech }}
             </span>
           </div>
@@ -39,7 +40,18 @@ export default {
 
 <style scoped>
 .project-card {
-  transition: transform 0.3s;
+  transition: transform 0.3s, opacity 0.5s;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .project-card:hover {
