@@ -10,9 +10,12 @@
     </div>
 
     <!-- Footer -->
-    <div class="w-full flex flex-row justify-end items-end p-4 md:p-10">
+    <div class="w-full flex flex-row justify-end items-end p-4 md:p-10 relative">
       <a href="mailto:contact@kaktuse.net" class="hover:underline flex items-center text-5xl md:text-4xl gap-2">
-        <Icon name="uil:envelope" />
+        <div class="relative">
+          <Icon name="uil:envelope" />
+          <span class="absolute top-0 left-0 w-4 h-4 bg-red-500 rounded-full animate-bounce"></span>
+        </div>
         <h1 class="hidden md:flex">contact@kaktuse.net</h1>
       </a>
     </div>
