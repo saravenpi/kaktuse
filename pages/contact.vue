@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-full">
+  <div class="w-full h-full bg-[#161616] text-white">
     <Navbar />
 
     <main class="p-5 md:p-10">
