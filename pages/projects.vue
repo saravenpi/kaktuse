@@ -9,11 +9,11 @@
         <div v-for="(project, index) in projects" :key="project.id"
           class="project-card p-6 border border-gray-300 rounded-lg shadow-lg"
           :style="{ animationDelay: `${index * 0.2}s` }">
-          <h2 class="text-2xl font-semibold mb-2">{{ project.title }}</h2>
-          <p class="text-lg">{{ project.description }}</p>
+          <h2 class="text-3xl font-semibold mb-2">{{ project.title }}</h2>
+          <p class="text-xl">{{ project.description }}</p>
           <div class="flex flex-wrap mt-4">
             <span v-for="tech in project.technologies" :key="tech"
-              class="border border-gray-400 text-gray-400 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded">
+              class="border border-gray-300 text-gray-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded">
               {{ tech }}
             </span>
           </div>
