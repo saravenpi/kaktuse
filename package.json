@@ -16,7 +16,9 @@
     "vue-router": "latest"
   },
   "devDependencies": {
+    "@nuxt/icon": "latest",
     "@nuxtjs/tailwindcss": "latest",
+    "@vesp/nuxt-fontawesome": "latest",
     "shadcn-nuxt": "latest"
   }
 }
