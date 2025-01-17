@@ -1,6 +1,5 @@
 <template>
-
-  <div class="w-full h-[100dvh] flex flex-col justify-between">
+  <div class="w-full h-[100svh] flex flex-col justify-between">
     <div class="wrapper wrapper-vanish">
       <!-- 3) Le trou noir qui grandit -->
       <div class="hole"></div>
