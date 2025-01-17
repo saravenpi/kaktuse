@@ -10,7 +10,7 @@
 
     <!-- Center -->
     <div class="flex flex-col md:ml-4 p-5 md:p-10">
-      <h1 class="post-anim text-[2rem] md:text-[9rem] font-black">Kaktuse.</h1>
+      <h1 class="post-anim text-[3.5rem] md:text-[9rem] font-black">Kaktuse.</h1>
       <h2 class="post-anim text-[1rem] md:text-[3rem] font-light">Innovative Web Development Solutions</h2>
     </div>
 
