@@ -50,8 +50,16 @@ body {
   background-color: #F9F5F3 !important;
 }
 
+.text-light {
+  color: #F9F5F3;
+}
+
 .text-dark {
   color: #1D1819;
+}
+
+.bg-dark {
+  background-color: #1D1819;
 }
 
 .text-primary {
