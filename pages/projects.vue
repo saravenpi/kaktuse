@@ -1,25 +1,25 @@
 <template>
-  <div class="w-full h-full bg-[#161616] text-white">
-    <Navbar />
+  <div>
+    <div class="w-full h-screen bg-light bg-grid text-dark overflow-y-auto">
+      <Navbar />
 
-    <main class="p-5 md:p-10">
-      <h1 class="text-4xl font-bold mb-8">Our Projects</h1>
+      <main class="p-5 md:p-10">
+        <h1 class="text-4xl font-bold mb-8 font-gambarino">Last Projects</h1>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        <div v-for="(project, index) in projects" :key="project.id"
-          class="project-card p-6 border border-gray-300 rounded-lg shadow-lg"
-          :style="{ animationDelay: `${index * 0.2}s` }">
-          <h2 class="text-3xl font-semibold mb-2">{{ project.title }}</h2>
-          <p class="text-xl">{{ project.description }}</p>
-          <div class="flex flex-wrap mt-4">
-            <span v-for="tech in project.technologies" :key="tech"
-              class="border border-gray-300 text-gray-300 text-sm font-medium mr-2 mb-2 px-3 py-1 rounded">
-              {{ tech }}
-            </span>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div v-for="(project, index) in projects" :key="project.id" class="project-card p-6 rounded-xl shadow-lg"
+            :style="{ animationDelay: `${index * 0.2}s` }">
+            <h2 class="text-3xl font-semibold mb-2">{{ project.title }}</h2>
+            <p class="text-xl">{{ project.description }}</p>
+            <div class="flex flex-wrap mt-4">
+              <Badge v-for="tech in project.technologies" :key="tech">
+                {{ tech }}
+              </Badge>
+            </div>
           </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   </div>
 </template>
 
@@ -43,12 +43,15 @@ export default {
   transition: transform 0.3s, opacity 0.5s;
   opacity: 0;
   animation: fadeIn 1s forwards;
+  background: #FFF;
+  border: 2px solid #7D6666;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }

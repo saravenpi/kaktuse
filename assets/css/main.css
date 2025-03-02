@@ -1,0 +1,69 @@
+/* Regular weight */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('~assets/fonts/Satoshi-Regular.woff2') format('woff2'),
+    url('~assets/fonts/Satoshi-Regular.woff') format('woff');
+  font-weight: 400;
+  /* Normal */
+  font-style: normal;
+}
+
+/* Bold weight */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('~assets/fonts/Satoshi-Bold.woff2') format('woff2'),
+    url('~assets/fonts/Satoshi-Bold.woff') format('woff');
+  font-weight: 700;
+  /* Bold */
+  font-style: normal;
+}
+
+/* Black weight */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('~assets/fonts/Satoshi-Black.woff2') format('woff2'),
+    url('~assets/fonts/Satoshi-Black.woff') format('woff');
+  font-weight: 900;
+  /* Black */
+  font-style: normal;
+}
+
+/* Regular weight */
+@font-face {
+  font-family: 'Gambarino';
+  src: url('~assets/fonts/Gambarino-Regular.woff2') format('woff2'),
+    url('~assets/fonts/Gambarino-Regular.woff') format('woff');
+  font-weight: 400;
+  /* Normal */
+  font-style: normal;
+}
+
+body {
+  font-family: 'Satoshi', sans-serif;
+}
+
+.font-gambarino {
+  font-family: 'Gambarino', sans-serif;
+}
+
+.bg-light {
+  background-color: #F9F5F3 !important;
+}
+
+.text-dark {
+  color: #1D1819;
+}
+
+.text-primary {
+  color: #F97315;
+}
+
+.bg-primary {
+  background-color: #F97315;
+}
+
+
+.bg-grid {
+  background: url('/assets/images/grid.png');
+  background-size: cover;
+}

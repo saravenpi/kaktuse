@@ -1,9 +1,9 @@
 <template>
-  <div class="w-full h-full bg-[#161616] text-white">
+  <div class="w-full h-full bg-light bg-grid text-white text-dark overflow-y-auto">
     <Navbar />
 
     <main class="p-5 md:p-10">
-      <h1 class="text-4xl font-bold mb-8">About</h1>
+      <h1 class="text-4xl font-bold mb-8 font-gambarino">About</h1>
       <p class="text-lg md:text-xl mb-8">
         We are a leading web development service company dedicated to delivering innovative and tailored solutions to
         meet the unique needs of our clients.
@@ -16,7 +16,7 @@
         We pride ourselves on our commitment to excellence, attention to detail, and customer satisfaction. Whether
         you're a startup or an established business, we are here to help you achieve your digital goals.
       </p>
-      <h1 class="text-4xl font-bold mb-8">Team</h1>
+      <h1 class="text-4xl font-bold mb-8 font-gambarino">Team</h1>
       <div class="flex flex-col md:flex-row flex-wrap">
 
         <div class="flex flex-col md:items-center ">
