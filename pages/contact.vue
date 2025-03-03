@@ -10,10 +10,8 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'ContactPage',
-}
+<script setup>
+useHead({
+  title: 'Kaktuse - Contact',
+})
 </script>
-
-<style scoped></style>

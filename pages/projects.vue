@@ -45,8 +45,11 @@
 </template>
 
 <script>
+useHead({
+  title: 'Kaktuse - Projects',
+})
+
 export default {
-  name: 'ProjectsPage',
   data() {
     return {
       projects: [

@@ -21,4 +21,25 @@
   </div>
 </template>
 
-<style></style>
+<script setup>
+useHead({
+  title: 'Kaktuse - Crafting impactful web solutions',
+  meta: [
+    { name: 'description', content: 'Kaktuse is a web development agency that crafts impactful web solutions for businesses and startups.' },
+    { name: 'keywords', content: 'web development, web design, web solutions, web applications, startups, businesses' },
+    { name: 'author', content: 'Yann Thevenin' },
+    { property: 'og:title', content: 'Kaktuse - Crafting impactful web solutions' },
+    { property: 'og:description', content: 'Kaktuse is a web development agency that crafts impactful web solutions for businesses and startups.' },
+    { property: 'og:image', content: 'https://kaktuse.net/og.png' },
+    { property: 'og:url', content: 'https://kaktuse.net' },
+    { property: 'og:type', content: 'website' },
+    { name: 'twitter:card', content: 'summary_large_image' },
+    { name: 'twitter:title', content: 'Kaktuse - Crafting impactful web solutions' },
+    { name: 'twitter:description', content: 'Kaktuse is a web development agency that crafts impactful web solutions for businesses and startups.' },
+    { name: 'twitter:image', content: 'https://kaktuse.net/og.png' }
+  ],
+  link: [
+    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+  ]
+})
+</script>

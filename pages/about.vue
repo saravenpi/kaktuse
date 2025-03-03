@@ -40,3 +40,9 @@
     </main>
   </div>
 </template>
+
+<script setup>
+useHead({
+  title: 'Kaktuse - About',
+})
+</script>
