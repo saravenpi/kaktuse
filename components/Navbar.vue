@@ -9,11 +9,11 @@
 
       <div class="flex flex-row items-center space-x-6">
         <router-link to="/projects" class="text-xl font-medium hover:border-b-2 hover:border-white"
-          active-class="border-b-2 border-white">Projects</router-link>
+          active-class="border-b-2 border-[#F97315]">Projects</router-link>
         <router-link to="/about" class="text-xl font-medium hover:border-b-2 hover:border-white"
-          active-class="border-b-2 border-white">About</router-link>
+          active-class="border-b-2 border-[#F97315]">About</router-link>
         <router-link to="/contact" class="text-xl font-medium hover:border-b-2 hover:border-white"
-          active-class="border-b-2 border-white">Contact</router-link>
+          active-class="border-b-2 border-[#F97315]">Contact</router-link>
       </div>
     </div>
   </div>

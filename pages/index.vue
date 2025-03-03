@@ -4,7 +4,9 @@
 
     <div class="flex flex-col md:ml-4 p-5 md:p-10">
       <h1 class="post-anim text-[3.5rem] md:text-[9rem] font-black font-gambarino">Kaktuse.</h1>
-      <h2 class="post-anim text-[1rem] md:text-[3rem]">Crafting <span class="text-primary font-bold italic">impactful</span> web solutions</h2>
+      <h2 class="post-anim text-[1rem] md:text-[3rem]">
+        Crafting <span class="text-primary font-bold italic">impactful</span> web solutions
+      </h2>
     </div>
 
     <div class="w-full flex flex-row justify-end items-end p-4 md:p-10 relative bottom-12 md:bottom-0 right-4">
