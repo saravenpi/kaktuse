@@ -28,6 +28,26 @@
   font-style: normal;
 }
 
+/* Bold Italic weight */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('~assets/fonts/Satoshi-BoldItalic.woff2') format('woff2'),
+    url('~assets/fonts/Satoshi-BoldItalic.woff') format('woff');
+  font-weight: 700;
+  /* Black */
+  font-style: italic;
+}
+
+/* Bold Italic weight */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('~assets/fonts/Satoshi-Italic.woff2') format('woff2'),
+    url('~assets/fonts/Satoshi-Italic.woff') format('woff');
+  font-weight: 400;
+  /* Black */
+  font-style: italic;
+}
+
 /* Regular weight */
 @font-face {
   font-family: 'Gambarino';
