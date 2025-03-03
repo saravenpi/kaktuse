@@ -50,6 +50,10 @@ body {
   background-color: #F9F5F3 !important;
 }
 
+.text-description {
+  color: #7D6665;
+}
+
 .text-light {
   color: #F9F5F3;
 }
