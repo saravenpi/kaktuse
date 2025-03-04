@@ -3,8 +3,8 @@
     <Navbar />
 
     <div class="flex flex-col md:ml-4 p-5 md:p-10">
-      <h1 class="post-anim text-[3.5rem] md:text-[9rem] font-black font-gambarino">Kaktuse.</h1>
-      <h2 class="post-anim text-[1rem] md:text-[3rem]">
+      <h1 class="post-anim text-[6rem] md:text-[9rem] font-black font-gambarino">Kaktuse.</h1>
+      <h2 class="post-anim text-[2.5rem] md:text-[3rem]">
         Crafting <span class="text-primary font-bold italic">impactful</span> web solutions
       </h2>
     </div>
