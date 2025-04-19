@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-screen flex flex-col justify-between bg-light text-dark bg-grid">
+  <div class="w-full h-[100dvh] flex flex-col justify-between bg-light text-dark bg-grid">
     <Navbar />
 
     <div class="flex flex-col md:ml-4 p-5 md:p-10">
