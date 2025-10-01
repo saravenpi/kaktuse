@@ -1,8 +1,8 @@
 /* Regular weight */
 @font-face {
   font-family: 'Satoshi';
-  src: url('~assets/fonts/Satoshi-Regular.woff2') format('woff2'),
-    url('~assets/fonts/Satoshi-Regular.woff') format('woff');
+  src: url('~/assets/fonts/Satoshi-Regular.woff2') format('woff2'),
+    url('~/assets/fonts/Satoshi-Regular.woff') format('woff');
   font-weight: 400;
   /* Normal */
   font-style: normal;
@@ -11,8 +11,8 @@
 /* Bold weight */
 @font-face {
   font-family: 'Satoshi';
-  src: url('~assets/fonts/Satoshi-Bold.woff2') format('woff2'),
-    url('~assets/fonts/Satoshi-Bold.woff') format('woff');
+  src: url('~/assets/fonts/Satoshi-Bold.woff2') format('woff2'),
+    url('~/assets/fonts/Satoshi-Bold.woff') format('woff');
   font-weight: 700;
   /* Bold */
   font-style: normal;
@@ -21,8 +21,8 @@
 /* Black weight */
 @font-face {
   font-family: 'Satoshi';
-  src: url('~assets/fonts/Satoshi-Black.woff2') format('woff2'),
-    url('~assets/fonts/Satoshi-Black.woff') format('woff');
+  src: url('~/assets/fonts/Satoshi-Black.woff2') format('woff2'),
+    url('~/assets/fonts/Satoshi-Black.woff') format('woff');
   font-weight: 900;
   /* Black */
   font-style: normal;
@@ -31,28 +31,28 @@
 /* Bold Italic weight */
 @font-face {
   font-family: 'Satoshi';
-  src: url('~assets/fonts/Satoshi-BoldItalic.woff2') format('woff2'),
-    url('~assets/fonts/Satoshi-BoldItalic.woff') format('woff');
+  src: url('~/assets/fonts/Satoshi-BoldItalic.woff2') format('woff2'),
+    url('~/assets/fonts/Satoshi-BoldItalic.woff') format('woff');
   font-weight: 700;
-  /* Black */
+  /* Bold Italic */
   font-style: italic;
 }
 
-/* Bold Italic weight */
+/* Italic weight */
 @font-face {
   font-family: 'Satoshi';
-  src: url('~assets/fonts/Satoshi-Italic.woff2') format('woff2'),
-    url('~assets/fonts/Satoshi-Italic.woff') format('woff');
+  src: url('~/assets/fonts/Satoshi-Italic.woff2') format('woff2'),
+    url('~/assets/fonts/Satoshi-Italic.woff') format('woff');
   font-weight: 400;
-  /* Black */
+  /* Regular Italic */
   font-style: italic;
 }
 
 /* Regular weight */
 @font-face {
   font-family: 'Gambarino';
-  src: url('~assets/fonts/Gambarino-Regular.woff2') format('woff2'),
-    url('~assets/fonts/Gambarino-Regular.woff') format('woff');
+  src: url('~/assets/fonts/Gambarino-Regular.woff2') format('woff2'),
+    url('~/assets/fonts/Gambarino-Regular.woff') format('woff');
   font-weight: 400;
   /* Normal */
   font-style: normal;

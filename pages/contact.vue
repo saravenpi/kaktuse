@@ -4,57 +4,37 @@
 
     <main class="p-5 md:p-10 flex flex-col items-center">
       <h1 class="text-4xl font-bold mb-4 font-gambarino text-center flex items-center gap-2">
-          <Icon name="solar:letter-bold-duotone"  class="text-3xl text-description"/>
-        Contact Us</h1>
-      <p class="text-xl mb-8 text-center">We'd love to hear from you! Fill out the form below or email us directly at <a href="mailto:contact@kaktuse.net" class="text-[#F97315] underline">contact@kaktuse.net</a>.</p>
-      <form
-        class="w-full max-w-lg rounded-xl shadow-lg p-8 flex flex-col gap-6 project-card"
-        @submit.prevent="handleSubmit"
-      >
+        <Icon name="solar:letter-bold-duotone" class="text-3xl text-description" />
+        Get in touch
+      </h1>
+      <p class="text-xl mb-8 text-center">Let's get in touch ! Fill out the form below or email directly at <a
+          href="mailto:contact@kaktuse.net" class="text-[#F97315] underline">contact@kaktuse.net</a>.</p>
+      <form class="w-full max-w-lg rounded-xl shadow-lg p-8 flex flex-col gap-6 project-card"
+        @submit.prevent="handleSubmit">
         <div>
           <label for="name" class="block text-lg font-medium mb-1">Name</label>
-          <input
-            id="name"
-            v-model="form.name"
-            type="text"
+          <input id="name" v-model="form.name" type="text"
             class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#F97315]"
-            :class="{'border-red-400': errors.name}"
-            placeholder="Your name"
-            required
-          />
+            :class="{ 'border-red-400': errors.name }" placeholder="Your name" required />
           <p v-if="errors.name" class="text-red-500 text-sm mt-1">{{ errors.name }}</p>
         </div>
         <div>
           <label for="email" class="block text-lg font-medium mb-1">Email</label>
-          <input
-            id="email"
-            v-model="form.email"
-            type="email"
+          <input id="email" v-model="form.email" type="email"
             class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#F97315]"
-            :class="{'border-red-400': errors.email}"
-            placeholder="you@email.com"
-            required
-          />
+            :class="{ 'border-red-400': errors.email }" placeholder="you@email.com" required />
           <p v-if="errors.email" class="text-red-500 text-sm mt-1">{{ errors.email }}</p>
         </div>
         <div>
           <label for="message" class="block text-lg font-medium mb-1">Message</label>
-          <textarea
-            id="message"
-            v-model="form.message"
-            rows="5"
+          <textarea id="message" v-model="form.message" rows="5"
             class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#F97315]"
-            :class="{'border-red-400': errors.message}"
-            placeholder="How can we help you?"
-            required
-          ></textarea>
+            :class="{ 'border-red-400': errors.message }" placeholder="How can we help you?" required></textarea>
           <p v-if="errors.message" class="text-red-500 text-sm mt-1">{{ errors.message }}</p>
         </div>
-        <button
-          type="submit"
+        <button type="submit"
           class="bg-[#F97315] hover:bg-[#ea580c] text-white font-bold py-2 px-6 rounded transition-colors duration-200 flex items-center justify-center gap-2"
-          :disabled="loading"
-        >
+          :disabled="loading">
           <span v-if="loading">Sending...</span>
           <span v-else class="flex items-center gap-2">
             <Icon name="solar:plain-bold-duotone" class="text-xl" />
