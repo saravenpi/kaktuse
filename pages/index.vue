@@ -2,14 +2,14 @@
   <div class="w-full h-[100dvh] flex flex-col justify-between bg-light text-dark bg-grid">
     <Navbar />
 
-    <div class="flex flex-col md:ml-4 p-5 md:p-10">
+    <div class="flex flex-col md:ml-4 p-5 md:p-10 pt-20 md:pt-10">
       <h1 class="post-anim text-[4rem] md:text-[9rem] font-black font-gambarino">Kaktuse.</h1>
       <h2 class="post-anim text-[2.5rem] md:text-[3rem]">
         Crafting <span class="text-primary font-bold italic">impactful</span> web solutions
       </h2>
     </div>
 
-    <div class="w-full flex flex-row justify-end items-end p-4 md:p-10 relative bottom-12 md:bottom-0 right-4">
+    <div class="w-full flex flex-row justify-end items-end p-4 md:p-10 relative bottom-24 md:bottom-12 right-4">
       <a href="mailto:contact@kaktuse.net" class="hover:underline flex items-center text-5xl md:text-4xl gap-2">
         <div class="relative">
           <Icon name="uil:envelope" />

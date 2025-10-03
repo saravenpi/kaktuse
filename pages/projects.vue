@@ -3,7 +3,7 @@
     <div class="w-full h-screen bg-light bg-grid text-dark overflow-y-auto">
       <Navbar />
 
-      <main class="p-5 md:p-10">
+      <main class="p-5 md:p-10 pb-32 md:pb-32 pt-20 md:pt-10">
         <h1 class="text-4xl font-bold mb-8 font-gambarino">Last Projects</h1>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">

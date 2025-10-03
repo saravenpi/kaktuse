@@ -2,131 +2,383 @@
   <div class="w-full min-h-screen bg-light bg-grid text-dark">
     <Navbar />
 
-    <main class="p-5 md:p-10 flex flex-col items-center">
-      <h1 class="text-4xl font-bold mb-4 font-gambarino text-center flex items-center gap-2">
-        <Icon name="solar:letter-bold-duotone" class="text-3xl text-description" />
-        Get in touch
-      </h1>
-      <p class="text-xl mb-8 text-center">Let's get in touch ! Fill out the form below or email directly at <a
-          href="mailto:contact@kaktuse.net" class="text-[#F97315] underline">contact@kaktuse.net</a>.</p>
-      <form class="w-full max-w-lg rounded-xl shadow-lg p-8 flex flex-col gap-6 project-card"
-        @submit.prevent="handleSubmit">
-        <div>
-          <label for="name" class="block text-lg font-medium mb-1">Name</label>
-          <input id="name" v-model="form.name" type="text"
-            class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#F97315]"
-            :class="{ 'border-red-400': errors.name }" placeholder="Your name" required />
-          <p v-if="errors.name" class="text-red-500 text-sm mt-1">{{ errors.name }}</p>
+    <main class="p-5 md:p-10 pb-32 md:pb-32 pt-20 md:pt-10">
+      <!-- Hero Section -->
+      <section class="max-w-6xl mx-auto mb-16">
+        <div class="text-center mb-12">
+          <h1 class="text-5xl md:text-7xl font-bold mb-6 font-gambarino text-dark">Let's Connect</h1>
+          <p class="text-xl md:text-2xl text-description max-w-4xl mx-auto leading-relaxed">
+            Ready to bring your ideas to life? Choose your preferred way to reach out
+          </p>
         </div>
-        <div>
-          <label for="email" class="block text-lg font-medium mb-1">Email</label>
-          <input id="email" v-model="form.email" type="email"
-            class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#F97315]"
-            :class="{ 'border-red-400': errors.email }" placeholder="you@email.com" required />
-          <p v-if="errors.email" class="text-red-500 text-sm mt-1">{{ errors.email }}</p>
+      </section>
+
+      <!-- Contact Methods Grid -->
+      <section class="max-w-6xl mx-auto mb-20">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <!-- Email Card -->
+          <div class="contact-card group cursor-pointer" @click="openEmail">
+            <div class="contact-card-inner">
+              <div class="flex flex-col items-center text-center">
+                <div class="icon-container mb-6">
+                  <Icon name="mdi:email-outline" size="3em" class="text-[#F97315]" />
+                </div>
+                <h3 class="text-2xl font-bold mb-3 font-gambarino">Email</h3>
+                <p class="text-description mb-4">Send me a direct message</p>
+                <div class="email-address">
+                  <span class="text-[#F97315] font-medium">contact@kaktuse.net</span>
+                </div>
+                <div class="mt-4 flex items-center text-sm text-description">
+                  <Icon name="mdi:clock-outline" class="mr-2" />
+                  Usually responds within 24h
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- LinkedIn Card -->
+          <div class="contact-card group cursor-pointer" @click="openLinkedIn">
+            <div class="contact-card-inner">
+              <div class="flex flex-col items-center text-center">
+                <div class="icon-container mb-6">
+                  <Icon name="mdi:linkedin" size="3em" class="text-blue-600" />
+                </div>
+                <h3 class="text-2xl font-bold mb-3 font-gambarino">LinkedIn</h3>
+                <p class="text-description mb-4">Connect professionally</p>
+                <div class="linkedin-handle">
+                  <span class="text-blue-600 font-medium">@thevyann</span>
+                </div>
+                <div class="mt-4 flex items-center text-sm text-description">
+                  <Icon name="mdi:account-network" class="mr-2" />
+                  Professional networking
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- GitHub Card -->
+          <div class="contact-card group cursor-pointer" @click="openGitHub">
+            <div class="contact-card-inner">
+              <div class="flex flex-col items-center text-center">
+                <div class="icon-container mb-6">
+                  <Icon name="mdi:github" size="3em" class="text-gray-800" />
+                </div>
+                <h3 class="text-2xl font-bold mb-3 font-gambarino">GitHub</h3>
+                <p class="text-description mb-4">Check out my work</p>
+                <div class="github-handle">
+                  <span class="text-gray-800 font-medium">@saravenpi</span>
+                </div>
+                <div class="mt-4 flex items-center text-sm text-description">
+                  <Icon name="mdi:code-braces" class="mr-2" />
+                  Open source projects
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div>
-          <label for="message" class="block text-lg font-medium mb-1">Message</label>
-          <textarea id="message" v-model="form.message" rows="5"
-            class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#F97315]"
-            :class="{ 'border-red-400': errors.message }" placeholder="How can we help you?" required></textarea>
-          <p v-if="errors.message" class="text-red-500 text-sm mt-1">{{ errors.message }}</p>
+      </section>
+
+      <!-- Quick Contact Section -->
+      <section class="max-w-4xl mx-auto">
+        <div class="bg-dark rounded-3xl p-8 md:p-12 text-light relative overflow-hidden">
+          <!-- Background Pattern -->
+          <div class="absolute inset-0 opacity-15 overflow-hidden">
+            <div v-for="i in 150" :key="i"
+                 class="absolute bg-white rounded-full"
+                 :class="[getDotSize(i), getDotAnimation(i)]"
+                 :style="getDotStyle(i)"></div>
+          </div>
+
+          <div class="relative z-10">
+            <div class="text-center mb-8">
+              <h2 class="text-3xl md:text-4xl font-bold mb-4 font-gambarino">Ready to Start?</h2>
+              <p class="text-lg md:text-xl opacity-90 mb-8">
+                Got a project in mind? Let's discuss how we can bring it to life together.
+              </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <!-- Quick Email Button -->
+              <button @click="openQuickEmail"
+                      class="quick-action-btn bg-[#F97315] hover:bg-[#ea580c] text-white">
+                <Icon name="mdi:rocket-launch" size="1.5em" />
+                <span>Start a Project</span>
+                <Icon name="mdi:arrow-right" />
+              </button>
+
+              <!-- Schedule Call Button -->
+              <button @click="scheduleCall"
+                      class="quick-action-btn bg-white/10 hover:bg-white/20 text-white border border-white/20">
+                <Icon name="mdi:calendar-clock" size="1.5em" />
+                <span>Schedule a Call</span>
+                <Icon name="mdi:external-link" />
+              </button>
+            </div>
+
+            <!-- Response Time -->
+            <div class="mt-8 text-center">
+              <div class="inline-flex items-center bg-white/10 rounded-full px-4 py-2">
+                <div class="relative mr-2">
+                  <!-- Center dot (always visible) -->
+                  <div class="w-2 h-2 bg-green-400 rounded-full relative z-10"></div>
+                  <!-- Animated halos -->
+                  <div class="absolute inset-0 w-2 h-2 bg-green-400 rounded-full animate-ping opacity-75"></div>
+                  <div class="absolute inset-0 w-2 h-2 bg-green-300 rounded-full halo-pulse"></div>
+                </div>
+                <span class="text-sm">Usually online • Quick responses</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <button type="submit"
-          class="bg-[#F97315] hover:bg-[#ea580c] text-white font-bold py-2 px-6 rounded transition-colors duration-200 flex items-center justify-center gap-2"
-          :disabled="loading">
-          <span v-if="loading">Sending...</span>
-          <span v-else class="flex items-center gap-2">
-            <Icon name="solar:plain-bold-duotone" class="text-xl" />
-            Send Message
-          </span>
-        </button>
-        <p v-if="success" class="text-green-600 text-center font-medium mt-2">Thank you! Your message has been sent.</p>
-        <p v-if="errorMsg" class="text-red-600 text-center font-medium mt-2">{{ errorMsg }}</p>
-      </form>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="max-w-4xl mx-auto mt-20">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 font-gambarino text-dark">Quick Answers</h2>
+          <p class="text-lg text-description">Common questions about working together</p>
+        </div>
+
+        <div class="space-y-4">
+          <div v-for="(faq, index) in faqs" :key="index"
+               class="faq-item bg-white rounded-2xl border border-gray-200 overflow-hidden">
+            <button @click="toggleFaq(index)"
+                    class="w-full p-6 text-left flex justify-between items-center hover:bg-gray-50 transition-colors">
+              <span class="font-medium text-lg">{{ faq.question }}</span>
+              <Icon name="mdi:chevron-down"
+                    :class="['transition-transform', openFaq === index ? 'rotate-180' : '']" />
+            </button>
+            <transition name="faq-unfold">
+              <div v-if="openFaq === index" class="faq-content">
+                <div class="px-8 py-6">
+                  <p class="text-description leading-relaxed">{{ faq.answer }}</p>
+                </div>
+              </div>
+            </transition>
+          </div>
+        </div>
+      </section>
+
     </main>
   </div>
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref } from 'vue'
 
 useHead({
   title: 'Kaktuse - Contact',
 })
 
-const form = reactive({
-  name: '',
-  email: '',
-  message: '',
-})
+const openFaq = ref(null)
 
-const errors = reactive({
-  name: '',
-  email: '',
-  message: '',
-})
+const faqs = [
+  {
+    question: "What's your typical project timeline?",
+    answer: "Most projects take 3-8 weeks depending on complexity. I'll provide a detailed timeline during our initial discussion."
+  },
+  {
+    question: "Do you work with international clients?",
+    answer: "Absolutely! I work with clients worldwide and am comfortable with different time zones and communication styles."
+  },
+  {
+    question: "What technologies do you specialize in?",
+    answer: "I specialize in Vue.js, Nuxt, TypeScript, SvelteKit, Golang, and Tailwind CSS for modern, scalable web applications."
+  },
+  {
+    question: "How do you handle project pricing?",
+    answer: "I provide custom quotes based on project scope, timeline, and requirements. Let's discuss your needs for an accurate estimate."
+  }
+]
 
-const loading = ref(false)
-const success = ref(false)
-const errorMsg = ref('')
-
-function validateEmail(email) {
-  // Simple email regex
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+function toggleFaq(index) {
+  openFaq.value = openFaq.value === index ? null : index
 }
 
-function validateForm() {
-  errors.name = form.name.trim() ? '' : 'Name is required.'
-  errors.email = form.email.trim()
-    ? (validateEmail(form.email) ? '' : 'Please enter a valid email.')
-    : 'Email is required.'
-  errors.message = form.message.trim() ? '' : 'Message is required.'
-  return !errors.name && !errors.email && !errors.message
+function openEmail() {
+  window.location.href = 'mailto:contact@kaktuse.net?subject=New Project Inquiry'
 }
 
-function handleSubmit() {
-  success.value = false
-  errorMsg.value = ''
-  if (!validateForm()) return
+function openLinkedIn() {
+  window.open('https://linkedin.com/in/thevyann', '_blank')
+}
 
-  // Construct mailto link with prefilled subject and body
-  const subject = encodeURIComponent('Contact from ' + form.name)
-  const body = encodeURIComponent(
-    `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
-  )
-  const mailto = `mailto:contact@kaktuse.net?subject=${subject}&body=${body}`
+function openGitHub() {
+  window.open('https://github.com/saravenpi', '_blank')
+}
 
-  // Redirect to mailto link
-  window.location.href = mailto
+function openQuickEmail() {
+  const subject = encodeURIComponent('Let\'s Start a Project Together!')
+  const body = encodeURIComponent('Hi Yann,\n\nI\'d like to discuss a project with you.\n\nProject type: \nTimeline: \nBudget range: \n\nLooking forward to hearing from you!\n\nBest regards,')
+  window.location.href = `mailto:contact@kaktuse.net?subject=${subject}&body=${body}`
+}
 
-  // Optionally reset form
-  form.name = ''
-  form.email = ''
-  form.message = ''
+function scheduleCall() {
+  // This could be integrated with Calendly or similar
+  window.open('mailto:contact@kaktuse.net?subject=Schedule a Call&body=Hi Yann,%0A%0AI\'d like to schedule a call to discuss my project.%0A%0APreferred time:%0AProject details:%0A%0AThanks!', '_blank')
+}
+
+function getDotSize(index) {
+  const rand = (index * 0.618) % 1 // Use golden ratio for better distribution
+  if (rand > 0.8) return 'w-3 h-3'
+  if (rand > 0.6) return 'w-2 h-2'
+  if (rand > 0.3) return 'w-1.5 h-1.5'
+  return 'w-1 h-1'
+}
+
+function getDotAnimation(index) {
+  // All dots will use the falling rain animation
+  return 'dot-rain'
+}
+
+function getDotStyle(index) {
+  // Use index-based pseudo-random generation for consistent positioning
+  const x = ((index * 17) % 97) // Prime numbers for better distribution
+  const startY = -10 - ((index * 19) % 30) // Start above the container
+  const delay = ((index * 0.2) % 8) // Stagger the rain drops
+  const duration = 3 + (((index * 13) % 20) * 0.2) // Rain fall duration
+  const opacity = 0.4 + (((index * 11) % 40) * 0.01)
+
+  return {
+    left: `${x}%`,
+    top: `${startY}%`,
+    animationDelay: `${delay}s`,
+    animationDuration: `${duration}s`,
+    opacity: opacity
+  }
 }
 </script>
 
 <style scoped>
-.project-card {
-  transition: transform 0.3s, opacity 0.5s;
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-  background: #FFF;
-  border: 2px solid #7D6666;
+/* Contact Cards */
+.contact-card {
+  @apply bg-white rounded-2xl border-2 border-gray-100 p-6 transition-all duration-300 hover:shadow-lg hover:border-gray-200;
 }
 
-@keyframes fadeIn {
-  from {
+.contact-card:hover {
+  @apply transform -translate-y-2;
+}
+
+.contact-card-inner {
+  @apply h-full;
+}
+
+.icon-container {
+  @apply w-20 h-20 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-gray-100 transition-colors;
+}
+
+/* Quick Action Buttons */
+.quick-action-btn {
+  @apply flex items-center justify-center gap-3 p-4 rounded-xl font-medium transition-all duration-200 hover:transform hover:scale-105;
+}
+
+/* FAQ Items */
+.faq-item {
+  @apply transition-all duration-300;
+}
+
+.faq-item:hover {
+  @apply shadow-md;
+}
+
+.faq-content {
+  @apply border-t border-gray-100;
+}
+
+/* FAQ Unfold Animation */
+.faq-unfold-enter-active {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: top;
+}
+
+.faq-unfold-leave-active {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: top;
+}
+
+.faq-unfold-enter-from {
+  opacity: 0;
+  transform: scaleY(0) translateY(-10px);
+  max-height: 0;
+}
+
+.faq-unfold-enter-to {
+  opacity: 1;
+  transform: scaleY(1) translateY(0);
+  max-height: 200px;
+}
+
+.faq-unfold-leave-from {
+  opacity: 1;
+  transform: scaleY(1) translateY(0);
+  max-height: 200px;
+}
+
+.faq-unfold-leave-to {
+  opacity: 0;
+  transform: scaleY(0) translateY(-10px);
+  max-height: 0;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.contact-card:nth-child(1) {
+  animation: float 6s ease-in-out infinite;
+}
+
+.contact-card:nth-child(2) {
+  animation: float 6s ease-in-out infinite 2s;
+}
+
+.contact-card:nth-child(3) {
+  animation: float 6s ease-in-out infinite 4s;
+}
+
+/* Dot Animations */
+.dot-rain {
+  animation: dotRain infinite linear;
+}
+
+/* Status Indicator */
+.halo-pulse {
+  animation: haloPulse 2s infinite ease-in-out;
+}
+
+@keyframes dotRain {
+  0% {
+    transform: translateY(0px);
     opacity: 0;
   }
-
-  to {
+  10% {
     opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(120vh);
+    opacity: 0;
   }
 }
 
-.project-card:hover {
-  transform: translateY(-5px);
+@keyframes haloPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(2.5);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
 }
 </style>
