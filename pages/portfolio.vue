@@ -16,9 +16,16 @@
       <!-- Hero Section -->
       <section class="max-w-7xl mx-auto mb-16">
         <div class="text-center mb-12">
-          <div class="inline-flex items-center gap-3 bg-[#F97315]/10 rounded-full px-6 py-2 mb-6 fade-in-up">
-            <Icon name="solar:folder-bold-duotone" class="text-[#F97315]" size="1.2em" />
-            <span class="text-[#F97315] font-medium">Portfolio</span>
+          <div class="inline-flex items-center gap-3 bg-[#F97315]/10 rounded-full px-6 py-2 mb-6 fade-in-up relative overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-10 overflow-hidden">
+              <div v-for="i in 30" :key="'pill-' + i"
+                   class="absolute bg-[#F97315] rounded-full dot-rain"
+                   :class="getPillDotSize(i)"
+                   :style="getPillDotStyle(i)"></div>
+            </div>
+            <Icon name="solar:folder-bold-duotone" class="text-[#F97315] relative z-10" size="1.2em" />
+            <span class="text-[#F97315] font-medium relative z-10">Portfolio</span>
           </div>
 
           <h1 class="text-5xl md:text-7xl font-bold mb-6 font-gambarino text-dark fade-in-up" style="animation-delay: 0.2s;">
@@ -221,6 +228,27 @@ export default {
       const delay = ((index * 0.2) % 8) // Stagger the rain drops
       const duration = 3 + (((index * 13) % 20) * 0.2) // Rain fall duration
       const opacity = 0.4 + (((index * 11) % 40) * 0.01)
+
+      return {
+        left: `${x}%`,
+        top: `${startY}%`,
+        animationDelay: `${delay}s`,
+        animationDuration: `${duration}s`,
+        opacity: opacity
+      }
+    },
+    getPillDotSize(index) {
+      const rand = (index * 0.618) % 1
+      if (rand > 0.7) return 'w-1.5 h-1.5'
+      if (rand > 0.4) return 'w-1 h-1'
+      return 'w-0.5 h-0.5'
+    },
+    getPillDotStyle(index) {
+      const x = ((index * 19) % 90) + 5
+      const startY = -5 - ((index * 13) % 15)
+      const delay = ((index * 0.3) % 4)
+      const duration = 2 + (((index * 11) % 15) * 0.1)
+      const opacity = 0.3 + (((index * 7) % 30) * 0.01)
 
       return {
         left: `${x}%`,
