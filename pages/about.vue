@@ -6,8 +6,13 @@
       <!-- Hero Section -->
       <section class="max-w-6xl mx-auto mb-16">
         <div class="text-center mb-12">
-          <h1 class="text-5xl md:text-7xl font-bold mb-6 font-gambarino text-dark">About Kaktuse</h1>
-          <p class="text-xl md:text-2xl text-description max-w-4xl mx-auto leading-relaxed">
+          <div class="inline-flex items-center gap-3 bg-[#F97315]/10 rounded-full px-6 py-2 mb-6 fade-in-up">
+            <Icon name="solar:user-bold-duotone" class="text-[#F97315]" size="1.2em" />
+            <span class="text-[#F97315] font-medium">About</span>
+          </div>
+
+          <h1 class="text-5xl md:text-7xl font-bold mb-6 font-gambarino text-dark fade-in-up" style="animation-delay: 0.2s;">About Kaktuse</h1>
+          <p class="text-xl md:text-2xl text-description max-w-4xl mx-auto leading-relaxed fade-in-up" style="animation-delay: 0.4s;">
             Crafting digital experiences that bloom in the digital desert
           </p>
         </div>
@@ -65,7 +70,7 @@
         </div>
 
         <div class="flex justify-center">
-          <div class="bg-white rounded-3xl p-8 shadow-lg max-w-md text-center border border-gray-100">
+          <div class="rounded-3xl p-8 shadow-lg max-w-md text-center profile-card" style="background: #FFF; border: 2px solid #7D6666;">
             <div class="relative mb-6">
               <img src="https://avatars.githubusercontent.com/u/61117321?v=4" alt="Yann Thevenin"
                 class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-primary" />
@@ -79,13 +84,15 @@
 
             <div class="flex justify-center space-x-4">
               <a href="https://github.com/saravenpi" target="_blank"
-                class="bg-dark text-white p-3 rounded-full hover:bg-gray-800 transition-colors duration-200 flex items-center justify-center"
+                class="social-card text-[#F97315] p-3 rounded-full transition-all duration-300 flex items-center justify-center"
+                style="background: #FFF; border: 2px solid #7D6666;"
                 aria-label="GitHub Profile">
                 <Icon name="mdi:github" size="1.5em" />
               </a>
 
               <a href="https://linkedin.com/in/thevyann" target="_blank"
-                class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center"
+                class="social-card text-[#F97315] p-3 rounded-full transition-all duration-300 flex items-center justify-center"
+                style="background: #FFF; border: 2px solid #7D6666;"
                 aria-label="LinkedIn Profile">
                 <Icon name="mdi:linkedin" size="1.5em" />
               </a>
@@ -137,3 +144,41 @@ useHead({
   title: 'Kaktuse - About',
 })
 </script>
+
+<style scoped>
+/* Fade in up animation */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Profile and Social Cards */
+.profile-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.social-card {
+  transition: transform 0.3s, opacity 0.5s, box-shadow 0.3s;
+  opacity: 1;
+  background: #FFF;
+  border: 2px solid #7D6666;
+}
+
+.social-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+</style>

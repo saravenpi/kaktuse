@@ -15,16 +15,16 @@
           <div class="tooltip">Home</div>
         </router-link>
 
-        <!-- Projects -->
+        <!-- Portfolio -->
         <router-link
-          to="/projects"
+          to="/portfolio"
           class="dock-item group relative"
-          :class="$route.path === '/projects' ? 'active' : ''"
+          :class="$route.path === '/portfolio' ? 'active' : ''"
         >
           <div class="icon-container">
-            <Icon name="solar:folder-bold-duotone" size="2em" :class="$route.path === '/projects' ? 'text-[#F97315]' : 'text-gray-700 group-hover:text-[#F97315]'" />
+            <Icon name="solar:folder-bold-duotone" size="2em" :class="$route.path === '/portfolio' ? 'text-[#F97315]' : 'text-gray-700 group-hover:text-[#F97315]'" />
           </div>
-          <div class="tooltip">Projects</div>
+          <div class="tooltip">Portfolio</div>
         </router-link>
 
         <!-- About -->
@@ -55,34 +55,34 @@
   </div>
 
   <!-- Mobile Button Navigation -->
-  <div class="fixed bottom-0 left-0 right-0 z-50 md:hidden">
-    <div class="bg-dark border-t border-gray-800 px-4 py-2">
+  <div class="fixed bottom-6 left-6 right-6 z-50 md:hidden">
+    <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-3 shadow-2xl border border-white/20">
       <div class="flex justify-around items-center">
         <!-- Home -->
         <router-link
           to="/"
           class="mobile-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-200"
-          :class="$route.path === '/' ? 'bg-[#F97315]/20' : 'hover:bg-white/10'"
+          :class="$route.path === '/' ? 'bg-[#F97315]/20' : 'hover:bg-white/20'"
         >
           <Icon name="solar:home-bold-duotone" size="2em" :class="$route.path === '/' ? 'text-[#F97315]' : 'text-white'" />
           <span class="text-xs mt-1" :class="$route.path === '/' ? 'text-[#F97315]' : 'text-white'">Home</span>
         </router-link>
 
-        <!-- Projects -->
+        <!-- Portfolio -->
         <router-link
-          to="/projects"
+          to="/portfolio"
           class="mobile-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-200"
-          :class="$route.path === '/projects' ? 'bg-[#F97315]/20' : 'hover:bg-white/10'"
+          :class="$route.path === '/portfolio' ? 'bg-[#F97315]/20' : 'hover:bg-white/20'"
         >
-          <Icon name="solar:folder-bold-duotone" size="2em" :class="$route.path === '/projects' ? 'text-[#F97315]' : 'text-white'" />
-          <span class="text-xs mt-1" :class="$route.path === '/projects' ? 'text-[#F97315]' : 'text-white'">Projects</span>
+          <Icon name="solar:folder-bold-duotone" size="2em" :class="$route.path === '/portfolio' ? 'text-[#F97315]' : 'text-white'" />
+          <span class="text-xs mt-1" :class="$route.path === '/portfolio' ? 'text-[#F97315]' : 'text-white'">Portfolio</span>
         </router-link>
 
         <!-- About -->
         <router-link
           to="/about"
           class="mobile-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-200"
-          :class="$route.path === '/about' ? 'bg-[#F97315]/20' : 'hover:bg-white/10'"
+          :class="$route.path === '/about' ? 'bg-[#F97315]/20' : 'hover:bg-white/20'"
         >
           <Icon name="solar:user-bold-duotone" size="2em" :class="$route.path === '/about' ? 'text-[#F97315]' : 'text-white'" />
           <span class="text-xs mt-1" :class="$route.path === '/about' ? 'text-[#F97315]' : 'text-white'">About</span>
@@ -92,7 +92,7 @@
         <router-link
           to="/contact"
           class="mobile-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-200"
-          :class="$route.path === '/contact' ? 'bg-[#F97315]/20' : 'hover:bg-white/10'"
+          :class="$route.path === '/contact' ? 'bg-[#F97315]/20' : 'hover:bg-white/20'"
         >
           <Icon name="solar:letter-bold-duotone" size="2em" :class="$route.path === '/contact' ? 'text-[#F97315]' : 'text-white'" />
           <span class="text-xs mt-1" :class="$route.path === '/contact' ? 'text-[#F97315]' : 'text-white'">Contact</span>

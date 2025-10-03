@@ -6,8 +6,13 @@
       <!-- Hero Section -->
       <section class="max-w-6xl mx-auto mb-16">
         <div class="text-center mb-12">
-          <h1 class="text-5xl md:text-7xl font-bold mb-6 font-gambarino text-dark">Let's Connect</h1>
-          <p class="text-xl md:text-2xl text-description max-w-4xl mx-auto leading-relaxed">
+          <div class="inline-flex items-center gap-3 bg-[#F97315]/10 rounded-full px-6 py-2 mb-6 fade-in-up">
+            <Icon name="solar:letter-bold-duotone" class="text-[#F97315]" size="1.2em" />
+            <span class="text-[#F97315] font-medium">Contact</span>
+          </div>
+
+          <h1 class="text-5xl md:text-7xl font-bold mb-6 font-gambarino text-dark fade-in-up" style="animation-delay: 0.2s;">Let's Connect</h1>
+          <p class="text-xl md:text-2xl text-description max-w-4xl mx-auto leading-relaxed fade-in-up" style="animation-delay: 0.4s;">
             Ready to bring your ideas to life? Choose your preferred way to reach out
           </p>
         </div>
@@ -338,6 +343,20 @@ function getDotStyle(index) {
 
 .contact-card:nth-child(3) {
   animation: float 6s ease-in-out infinite 4s;
+}
+
+/* Fade in up animation */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Dot Animations */
