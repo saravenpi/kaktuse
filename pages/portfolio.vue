@@ -115,7 +115,7 @@
                           class="cta-button secondary group">
                   <Icon name="solar:user-bold-duotone" size="1.2em" />
                   <span>Learn More</span>
-                  <Icon name="solar:external-link-bold" class="group-hover:scale-110 transition-transform" />
+                  <Icon name="solar:link-bold" class="group-hover:scale-110 transition-transform" />
                 </NuxtLink>
               </div>
             </div>

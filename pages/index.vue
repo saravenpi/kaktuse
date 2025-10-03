@@ -59,7 +59,7 @@
                     class="cta-button secondary group">
             <Icon name="solar:letter-bold-duotone" size="1.2em" />
             <span>Start a Project</span>
-            <Icon name="solar:external-link-bold" class="group-hover:scale-110 transition-transform" />
+            <Icon name="solar:link-bold" class="group-hover:scale-110 transition-transform" />
           </NuxtLink>
         </div>
 
