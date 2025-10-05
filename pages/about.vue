@@ -44,7 +44,7 @@
                 </li>
                 <li class="flex items-center">
                   <Icon name="mdi:check-circle" class="text-primary mr-3" size="1.5em" />
-                  <span>Modern Technologies</span>
+                  <span>Ecological Approach</span>
                 </li>
                 <li class="flex items-center">
                   <Icon name="mdi:check-circle" class="text-primary mr-3" size="1.5em" />
