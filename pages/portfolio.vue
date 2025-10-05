@@ -9,7 +9,7 @@
            :style="getOrbStyle(i)"></div>
     </div>
 
-    <main class="relative z-10 p-5 md:p-10 pb-32 md:pb-32 pt-20 md:pt-10">
+    <main class="relative z-10 p-5 md:p-10 pb-40 md:pb-40 pt-36 md:pt-40">
 
       <section class="max-w-7xl mx-auto mb-16">
         <div class="text-center mb-12">
@@ -21,15 +21,15 @@
                    :style="getPillDotStyle(i)"></div>
             </div>
             <Icon name="solar:folder-bold-duotone" class="text-[#F97315] relative z-10" size="1.2em" />
-            <span class="text-[#F97315] font-medium relative z-10">Portfolio</span>
+            <span class="text-[#F97315] font-medium relative z-10">{{ t('nav.portfolio') }}</span>
           </div>
 
           <h1 class="text-5xl md:text-7xl font-bold mb-6 font-gambarino text-dark fade-in-up" style="animation-delay: 0.2s;">
-            Featured Projects
+            {{ t('portfolio.title') }}
           </h1>
 
           <p class="text-xl md:text-2xl text-description max-w-3xl mx-auto leading-relaxed fade-in-up" style="animation-delay: 0.4s;">
-            Discover the innovative solutions I've crafted for clients across different industries
+            {{ t('portfolio.subtitle') }}
           </p>
         </div>
 
@@ -74,23 +74,23 @@
         <div class="text-center mt-20 fade-in-up" style="animation-delay: 0.3s;">
           <div class="bg-dark rounded-3xl p-8 md:p-12 text-light relative overflow-hidden">
             <div class="relative z-10">
-              <h2 class="text-3xl md:text-4xl font-bold mb-4 font-gambarino">Have a Project in Mind?</h2>
+              <h2 class="text-3xl md:text-4xl font-bold mb-4 font-gambarino">{{ t('portfolio.cta.title') }}</h2>
               <p class="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-                Let's collaborate to bring your vision to life with modern, scalable solutions
+                {{ t('portfolio.cta.subtitle') }}
               </p>
 
               <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <NuxtLink to="/contact"
                           class="cta-button primary group">
                   <Icon name="solar:letter-bold-duotone" size="1.2em" />
-                  <span>Start a Project</span>
+                  <span>{{ t('portfolio.cta.start_project') }}</span>
                   <Icon name="solar:arrow-right-bold" class="group-hover:translate-x-1 transition-transform" />
                 </NuxtLink>
 
                 <NuxtLink to="/about"
                           class="cta-button secondary group">
                   <Icon name="solar:user-bold-duotone" size="1.2em" />
-                  <span>Learn More</span>
+                  <span>{{ t('portfolio.cta.view_more') }}</span>
                   <Icon name="solar:link-bold" class="group-hover:scale-110 transition-transform" />
                 </NuxtLink>
               </div>
@@ -102,130 +102,131 @@
   </div>
 </template>
 
-<script>
+<script setup>
+const { t } = useI18n()
+
 useHead({
-  title: 'Kaktuse - Portfolio',
+  title: t('meta.portfolio.title'),
 })
 
-export default {
-  data() {
-    return {
-      projects: [
-        {
-          id: 1,
-          title: 'Disti.life',
-          description: 'Disti.life is a comprehensive ERP solution tailored for distilleries, integrating advanced AI technologies to optimize production processes, manage inventory, and enhance decision-making through predictive analytics.',
-          technologies: ['Vue.js', 'Node.js', 'AI', 'PostegreSQL', 'Docker'],
-          icon: 'solar:bottle-bold-duotone',
-          link: 'https://disti.life'
-        },
-        {
-          id: 2,
-          title: 'Solais Intranet',
-          description: 'Solais is a robust intranet platform designed for a solar company, facilitating seamless internal communication, document management, and collaboration among teams, while providing tools for project tracking and resource allocation.',
-          technologies: ['Angular', 'ExpressJS', 'MongoDB', 'Typescript'],
-          icon: 'solar:sun-2-bold-duotone',
-          link: 'https://solais.fr'
-        },
-        {
-          id: 3,
-          title: 'Marcel',
-          description: 'Marcel is an innovative gamified organisation app that transforms task management into an engaging experience, encouraging productivity and teamwork through game-like elements and rewards, suitable for both personal and professional use.',
-          technologies: ['Svelte', 'Pocketbase', 'Typescript', 'GoLang'],
-          icon: 'solar:checklist-minimalistic-bold-duotone',
-          link: 'https://marcel.my'
-        },
-        {
-          id: 4,
-          title: 'OffOn',
-          description: 'OffOn is a dynamic e-commerce platform specialized in smartphone sales and repairs, combining a sleek, user-friendly interface with powerful inventory and service management tools to streamline operations and enhance the customer experience.',
-          technologies: ['Vue', 'Nuxt', 'Directus', 'Typescript'],
-          icon: 'solar:monitor-smartphone-bold-duotone',
-          link: 'https://offon.store'
-        },
-        {
-          id: 5,
-          title: 'Brain.h',
-          description: 'Brain.h is a lightweight C library designed for building and training neural networks, offering a straightforward API and efficient performance, making it an ideal choice for developers seeking simplicity and control in AI projects.',
-          technologies: ['C'],
-          icon: 'solar:database-bold-duotone',
-          link: 'https://github.com/saravenpi/brain.h'
-        }
-      ]
-    }
+const projects = [
+  {
+    id: 1,
+    title: 'Disti.life',
+    description: 'Disti.life is a comprehensive ERP solution tailored for distilleries, integrating advanced AI technologies to optimize production processes, manage inventory, and enhance decision-making through predictive analytics.',
+    technologies: ['Vue.js', 'Node.js', 'AI', 'PostegreSQL', 'Docker'],
+    icon: 'solar:bottle-bold-duotone',
+    link: 'https://disti.life'
   },
-  methods: {
-    getOrbSize(index) {
-      const sizes = ['w-32 h-32', 'w-48 h-48', 'w-24 h-24', 'w-40 h-40', 'w-28 h-28', 'w-36 h-36']
-      return sizes[index % sizes.length]
-    },
-    getOrbStyle(index) {
-      const x = ((index * 31) % 90) + 5
-      const y = ((index * 17) % 80) + 10
-      const delay = (index * 1.2) % 5
-      const duration = 10 + (index % 6)
+  {
+    id: 2,
+    title: 'Solais Intranet',
+    description: 'Solais is a robust intranet platform designed for a solar company, facilitating seamless internal communication, document management, and collaboration among teams, while providing tools for project tracking and resource allocation.',
+    technologies: ['Angular', 'ExpressJS', 'MongoDB', 'Typescript'],
+    icon: 'solar:sun-2-bold-duotone',
+    link: 'https://solais.fr'
+  },
+  {
+    id: 3,
+    title: 'Marcel',
+    description: 'Marcel is an innovative gamified organisation app that transforms task management into an engaging experience, encouraging productivity and teamwork through game-like elements and rewards, suitable for both personal and professional use.',
+    technologies: ['Svelte', 'Pocketbase', 'Typescript', 'GoLang'],
+    icon: 'solar:checklist-minimalistic-bold-duotone',
+    link: 'https://marcel.my'
+  },
+  {
+    id: 4,
+    title: 'OffOn',
+    description: 'OffOn is a dynamic e-commerce platform specialized in smartphone sales and repairs, combining a sleek, user-friendly interface with powerful inventory and service management tools to streamline operations and enhance the customer experience.',
+    technologies: ['Vue', 'Nuxt', 'Directus', 'Typescript'],
+    icon: 'solar:monitor-smartphone-bold-duotone',
+    link: 'https://offon.store'
+  },
+  {
+    id: 5,
+    title: 'Brain.h',
+    description: 'Brain.h is a lightweight C library designed for building and training neural networks, offering a straightforward API and efficient performance, making it an ideal choice for developers seeking simplicity and control in AI projects.',
+    technologies: ['C'],
+    icon: 'solar:database-bold-duotone',
+    link: 'https://github.com/saravenpi/brain.h'
+  }
+]
 
-      return {
-        left: `${x}%`,
-        top: `${y}%`,
-        animationDelay: `${delay}s`,
-        animationDuration: `${duration}s`
-      }
-    },
-    getDotStyle(index) {
-      const x = ((index * 23) % 95) + 2
-      const y = ((index * 17) % 85) + 5
-      const delay = (index * 0.1) % 3
+function getOrbSize(index) {
+  const sizes = ['w-32 h-32', 'w-48 h-48', 'w-24 h-24', 'w-40 h-40', 'w-28 h-28', 'w-36 h-36']
+  return sizes[index % sizes.length]
+}
 
-      return {
-        left: `${x}%`,
-        top: `${y}%`,
-        animationDelay: `${delay}s`
-      }
-    },
-    getRainDotSize(index) {
-      const rand = (index * 0.618) % 1
-      if (rand > 0.8) return 'w-3 h-3'
-      if (rand > 0.6) return 'w-2 h-2'
-      if (rand > 0.3) return 'w-1.5 h-1.5'
-      return 'w-1 h-1'
-    },
-    getRainDotStyle(index) {
-      const x = ((index * 17) % 97)
-      const startY = -10 - ((index * 19) % 30)
-      const delay = ((index * 0.2) % 8)
-      const duration = 3 + (((index * 13) % 20) * 0.2)
-      const opacity = 0.4 + (((index * 11) % 40) * 0.01)
+function getOrbStyle(index) {
+  const x = ((index * 31) % 90) + 5
+  const y = ((index * 17) % 80) + 10
+  const delay = (index * 1.2) % 5
+  const duration = 10 + (index % 6)
 
-      return {
-        left: `${x}%`,
-        top: `${startY}%`,
-        animationDelay: `${delay}s`,
-        animationDuration: `${duration}s`,
-        opacity: opacity
-      }
-    },
-    getPillDotSize(index) {
-      const rand = (index * 0.618) % 1
-      if (rand > 0.7) return 'w-1.5 h-1.5'
-      if (rand > 0.4) return 'w-1 h-1'
-      return 'w-0.5 h-0.5'
-    },
-    getPillDotStyle(index) {
-      const x = ((index * 19) % 90) + 5
-      const startY = -5 - ((index * 13) % 15)
-      const delay = ((index * 0.3) % 4)
-      const duration = 2 + (((index * 11) % 15) * 0.1)
-      const opacity = 0.3 + (((index * 7) % 30) * 0.01)
+  return {
+    left: `${x}%`,
+    top: `${y}%`,
+    animationDelay: `${delay}s`,
+    animationDuration: `${duration}s`
+  }
+}
 
-      return {
-        left: `${x}%`,
-        top: `${startY}%`,
-        animationDelay: `${delay}s`,
-        animationDuration: `${duration}s`,
-        opacity: opacity
-      }
-    }
+function getDotStyle(index) {
+  const x = ((index * 23) % 95) + 2
+  const y = ((index * 17) % 85) + 5
+  const delay = (index * 0.1) % 3
+
+  return {
+    left: `${x}%`,
+    top: `${y}%`,
+    animationDelay: `${delay}s`
+  }
+}
+
+function getRainDotSize(index) {
+  const rand = (index * 0.618) % 1
+  if (rand > 0.8) return 'w-3 h-3'
+  if (rand > 0.6) return 'w-2 h-2'
+  if (rand > 0.3) return 'w-1.5 h-1.5'
+  return 'w-1 h-1'
+}
+
+function getRainDotStyle(index) {
+  const x = ((index * 17) % 97)
+  const startY = -10 - ((index * 19) % 30)
+  const delay = ((index * 0.2) % 8)
+  const duration = 3 + (((index * 13) % 20) * 0.2)
+  const opacity = 0.4 + (((index * 11) % 40) * 0.01)
+
+  return {
+    left: `${x}%`,
+    top: `${startY}%`,
+    animationDelay: `${delay}s`,
+    animationDuration: `${duration}s`,
+    opacity: opacity
+  }
+}
+
+function getPillDotSize(index) {
+  const rand = (index * 0.618) % 1
+  if (rand > 0.7) return 'w-1.5 h-1.5'
+  if (rand > 0.4) return 'w-1 h-1'
+  return 'w-0.5 h-0.5'
+}
+
+function getPillDotStyle(index) {
+  const x = ((index * 19) % 90) + 5
+  const startY = -5 - ((index * 13) % 15)
+  const delay = ((index * 0.3) % 4)
+  const duration = 2 + (((index * 11) % 15) * 0.1)
+  const opacity = 0.3 + (((index * 7) % 30) * 0.01)
+
+  return {
+    left: `${x}%`,
+    top: `${startY}%`,
+    animationDelay: `${delay}s`,
+    animationDuration: `${duration}s`,
+    opacity: opacity
   }
 }
 </script>

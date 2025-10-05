@@ -1,0 +1,157 @@
+{
+  "nav": {
+    "home": "Home",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Kaktuse.",
+    "subtitle": "Creating",
+    "typewriter": {
+      "impactful": "reliable websites",
+      "modern": "robust applications",
+      "scalable": "performant APIs",
+      "innovative": "practical solutions",
+      "beautiful": "maintainable code"
+    },
+    "tagline": "Where innovation meets creativity in the digital realm",
+    "cta": {
+      "view_work": "View My Work",
+      "start_project": "Start a Project"
+    },
+    "stats": {
+      "projects": "Open Source Projects",
+      "years": "Years in Business",
+      "response_time": "Response Time (h)"
+    }
+  },
+  "about": {
+    "title": "About Kaktuse",
+    "subtitle": "Crafting digital experiences that bloom in the digital desert",
+    "mission": {
+      "title": "My Mission",
+      "text1": "I am a dedicated fullstack developer with an AI background, committed to delivering innovative and tailored solutions to meet the unique needs of my clients.",
+      "text2": "I work collaboratively with clients to create high-quality, scalable, and user-friendly applications that drive real business results, with a focus on decentralized services and an ecological approach to development.",
+      "text3": "I pride myself on my commitment to excellence, attention to detail, and ensuring customer satisfaction. Whether you're a startup or an established business, I'm here to help you achieve your digital goals."
+    },
+    "what_sets_apart": {
+      "title": "What Sets Me Apart",
+      "personalized": "Personalized Approach",
+      "ecological": "Ecological Approach",
+      "clean_code": "Clean Code Practice",
+      "communication": "Direct Communication"
+    },
+    "services": {
+      "title": "My Services",
+      "subtitle": "Comprehensive solutions for your digital needs",
+      "ai": {
+        "title": "AI Integration",
+        "description": "Seamlessly integrate artificial intelligence into your applications to enhance functionality, automate processes, and provide intelligent user experiences.",
+        "features": {
+          "ml": "Machine Learning Models",
+          "nlp": "Natural Language Processing",
+          "analytics": "AI-Powered Analytics"
+        }
+      },
+      "web": {
+        "title": "Website Development",
+        "description": "Create modern, responsive, and high-performance websites that deliver exceptional user experiences and drive business growth.",
+        "features": {
+          "responsive": "Responsive Design",
+          "seo": "SEO Optimization",
+          "performance": "Performance Optimization"
+        }
+      },
+      "mobile": {
+        "title": "Mobile Applications",
+        "description": "Develop native and cross-platform mobile applications that provide seamless user experiences across all devices and platforms.",
+        "features": {
+          "cross_platform": "Cross-Platform Development",
+          "native": "Native Performance",
+          "deployment": "App Store Deployment"
+        }
+      }
+    },
+    "about_me": {
+      "title": "About Me",
+      "subtitle": "The developer behind Kaktuse",
+      "name": "Yann Thevenin",
+      "role": "Lead Developer & Founder",
+      "description": "Fullstack developer with an AI background, passionate about creating exceptional digital experiences with modern technologies, clean code architecture, and an ecological approach to development."
+    },
+    "technologies": {
+      "title": "Technologies I Use",
+      "subtitle": "Modern tools for modern solutions"
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Discover my recent projects",
+    "cta": {
+      "title": "Ready to create something amazing?",
+      "subtitle": "Let's turn your ideas into digital reality",
+      "start_project": "Start a Project",
+      "view_more": "View More Projects"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's create something extraordinary together",
+    "methods": {
+      "email": {
+        "title": "Email",
+        "description": "Send me an email to discuss your project"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "Let's connect professionally"
+      },
+      "github": {
+        "title": "GitHub",
+        "description": "Check out my code and contributions"
+      }
+    },
+    "quick_contact": {
+      "title": "Quick Contact",
+      "subtitle": "Need a quick response? Use one of these options",
+      "email_button": "Send Quick Email",
+      "schedule_button": "Schedule Call",
+      "response_time": "Typical response time: 24h"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": {
+        "question": "What types of projects do you take on?",
+        "answer": "I work on a variety of projects, from simple websites to complex web applications, AI integration, and mobile apps. If you have a digital project in mind, let's talk!"
+      },
+      "q2": {
+        "question": "How long does a typical project take?",
+        "answer": "It depends on the project complexity. A simple website might take 2-4 weeks, while a complex web application could take 2-6 months. I always provide a detailed timeline after our initial consultation."
+      },
+      "q3": {
+        "question": "Do you provide ongoing maintenance?",
+        "answer": "Yes, I offer ongoing maintenance and support services for all my projects. This includes updates, bug fixes, and feature enhancements."
+      },
+      "q4": {
+        "question": "Do you work with international clients?",
+        "answer": "Absolutely! I work with clients from around the world. I'm available for video calls and email communication across multiple time zones."
+      }
+    }
+  },
+  "meta": {
+    "home": {
+      "title": "Kaktuse - Crafting impactful web solutions",
+      "description": "Kaktuse is a web development agency that crafts impactful web solutions for businesses and startups."
+    },
+    "about": {
+      "title": "Kaktuse - About"
+    },
+    "portfolio": {
+      "title": "Kaktuse - Portfolio"
+    },
+    "contact": {
+      "title": "Kaktuse - Contact"
+    }
+  }
+}

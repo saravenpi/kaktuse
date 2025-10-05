@@ -2,17 +2,17 @@
   <div class="w-full min-h-screen bg-light text-dark bg-grid relative overflow-hidden">
     <Navbar />
 
-    <main class="p-5 md:p-10 pb-32 md:pb-32 pt-20 md:pt-10">
+    <main class="p-5 md:p-10 pb-40 md:pb-40 pt-36 md:pt-40">
       <section class="max-w-6xl mx-auto mb-16">
         <div class="text-center mb-12">
           <div class="inline-flex items-center gap-3 bg-[#F97315]/10 rounded-full px-6 py-2 mb-6 fade-in-up">
             <Icon name="solar:user-bold-duotone" class="text-[#F97315]" size="1.2em" />
-            <span class="text-[#F97315] font-medium">About</span>
+            <span class="text-[#F97315] font-medium">{{ t('nav.about') }}</span>
           </div>
 
-          <h1 class="text-5xl md:text-7xl font-bold mb-6 font-gambarino text-dark fade-in-up" style="animation-delay: 0.2s;">About Kaktuse</h1>
+          <h1 class="text-5xl md:text-7xl font-bold mb-6 font-gambarino text-dark fade-in-up" style="animation-delay: 0.2s;">{{ t('about.title') }}</h1>
           <p class="text-xl md:text-2xl text-description max-w-4xl mx-auto leading-relaxed fade-in-up" style="animation-delay: 0.4s;">
-            Crafting digital experiences that bloom in the digital desert
+            {{ t('about.subtitle') }}
           </p>
         </div>
       </section>
@@ -20,39 +20,36 @@
       <section class="max-w-6xl mx-auto mb-20">
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 class="text-3xl md:text-4xl font-bold mb-6 font-gambarino text-dark">My Mission</h2>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 font-gambarino text-dark">{{ t('about.mission.title') }}</h2>
             <p class="text-lg md:text-xl mb-6 text-description leading-relaxed">
-              I am a dedicated fullstack developer with an AI background, committed to delivering innovative and tailored solutions to meet the unique
-              needs of my clients.
+              {{ t('about.mission.text1') }}
             </p>
             <p class="text-lg md:text-xl mb-6 text-description leading-relaxed">
-              I work collaboratively with clients to create high-quality, scalable, and user-friendly applications
-              that drive real business results, with a focus on decentralized services and an ecological approach to development.
+              {{ t('about.mission.text2') }}
             </p>
             <p class="text-lg md:text-xl text-description leading-relaxed">
-              I pride myself on my commitment to excellence, attention to detail, and ensuring customer satisfaction. Whether
-              you're a startup or an established business, I'm here to help you achieve your digital goals.
+              {{ t('about.mission.text3') }}
             </p>
           </div>
           <div class="flex justify-center">
             <div class="bg-dark rounded-2xl p-8 text-light max-w-md">
-              <h3 class="text-2xl font-bold mb-4 font-gambarino">What Sets Me Apart</h3>
+              <h3 class="text-2xl font-bold mb-4 font-gambarino">{{ t('about.what_sets_apart.title') }}</h3>
               <ul class="space-y-3">
                 <li class="flex items-center">
                   <Icon name="mdi:check-circle" class="text-primary mr-3" size="1.5em" />
-                  <span>Personalized Approach</span>
+                  <span>{{ t('about.what_sets_apart.personalized') }}</span>
                 </li>
                 <li class="flex items-center">
                   <Icon name="mdi:check-circle" class="text-primary mr-3" size="1.5em" />
-                  <span>Ecological Approach</span>
+                  <span>{{ t('about.what_sets_apart.ecological') }}</span>
                 </li>
                 <li class="flex items-center">
                   <Icon name="mdi:check-circle" class="text-primary mr-3" size="1.5em" />
-                  <span>Clean Code Practice</span>
+                  <span>{{ t('about.what_sets_apart.clean_code') }}</span>
                 </li>
                 <li class="flex items-center">
                   <Icon name="mdi:check-circle" class="text-primary mr-3" size="1.5em" />
-                  <span>Direct Communication</span>
+                  <span>{{ t('about.what_sets_apart.communication') }}</span>
                 </li>
               </ul>
             </div>
@@ -62,8 +59,8 @@
 
       <section class="max-w-6xl mx-auto mb-20">
         <div class="text-center mb-12">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6 font-gambarino text-dark">My Services</h2>
-          <p class="text-xl text-description">Comprehensive solutions for your digital needs</p>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 font-gambarino text-dark">{{ t('about.services.title') }}</h2>
+          <p class="text-xl text-description">{{ t('about.services.subtitle') }}</p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
@@ -71,22 +68,22 @@
             <div class="bg-[#F97315]/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
               <Icon name="mdi:brain" class="text-[#F97315]" size="2em" />
             </div>
-            <h3 class="text-2xl font-bold mb-4 font-gambarino text-dark">AI Integration</h3>
+            <h3 class="text-2xl font-bold mb-4 font-gambarino text-dark">{{ t('about.services.ai.title') }}</h3>
             <p class="text-description leading-relaxed mb-4">
-              Seamlessly integrate artificial intelligence into your applications to enhance functionality, automate processes, and provide intelligent user experiences.
+              {{ t('about.services.ai.description') }}
             </p>
             <ul class="text-description space-y-2">
               <li class="flex items-center">
                 <Icon name="mdi:check" class="text-[#F97315] mr-2" size="1.2em" />
-                <span>Machine Learning Models</span>
+                <span>{{ t('about.services.ai.features.ml') }}</span>
               </li>
               <li class="flex items-center">
                 <Icon name="mdi:check" class="text-[#F97315] mr-2" size="1.2em" />
-                <span>Natural Language Processing</span>
+                <span>{{ t('about.services.ai.features.nlp') }}</span>
               </li>
               <li class="flex items-center">
                 <Icon name="mdi:check" class="text-[#F97315] mr-2" size="1.2em" />
-                <span>AI-Powered Analytics</span>
+                <span>{{ t('about.services.ai.features.analytics') }}</span>
               </li>
             </ul>
           </div>
@@ -95,22 +92,22 @@
             <div class="bg-[#F97315]/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
               <Icon name="mdi:web" class="text-[#F97315]" size="2em" />
             </div>
-            <h3 class="text-2xl font-bold mb-4 font-gambarino text-dark">Website Development</h3>
+            <h3 class="text-2xl font-bold mb-4 font-gambarino text-dark">{{ t('about.services.web.title') }}</h3>
             <p class="text-description leading-relaxed mb-4">
-              Create modern, responsive, and high-performance websites that deliver exceptional user experiences and drive business growth.
+              {{ t('about.services.web.description') }}
             </p>
             <ul class="text-description space-y-2">
               <li class="flex items-center">
                 <Icon name="mdi:check" class="text-[#F97315] mr-2" size="1.2em" />
-                <span>Responsive Design</span>
+                <span>{{ t('about.services.web.features.responsive') }}</span>
               </li>
               <li class="flex items-center">
                 <Icon name="mdi:check" class="text-[#F97315] mr-2" size="1.2em" />
-                <span>SEO Optimization</span>
+                <span>{{ t('about.services.web.features.seo') }}</span>
               </li>
               <li class="flex items-center">
                 <Icon name="mdi:check" class="text-[#F97315] mr-2" size="1.2em" />
-                <span>Performance Optimization</span>
+                <span>{{ t('about.services.web.features.performance') }}</span>
               </li>
             </ul>
           </div>
@@ -119,22 +116,22 @@
             <div class="bg-[#F97315]/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
               <Icon name="mdi:cellphone" class="text-[#F97315]" size="2em" />
             </div>
-            <h3 class="text-2xl font-bold mb-4 font-gambarino text-dark">Mobile Applications</h3>
+            <h3 class="text-2xl font-bold mb-4 font-gambarino text-dark">{{ t('about.services.mobile.title') }}</h3>
             <p class="text-description leading-relaxed mb-4">
-              Develop native and cross-platform mobile applications that provide seamless user experiences across all devices and platforms.
+              {{ t('about.services.mobile.description') }}
             </p>
             <ul class="text-description space-y-2">
               <li class="flex items-center">
                 <Icon name="mdi:check" class="text-[#F97315] mr-2" size="1.2em" />
-                <span>Cross-Platform Development</span>
+                <span>{{ t('about.services.mobile.features.cross_platform') }}</span>
               </li>
               <li class="flex items-center">
                 <Icon name="mdi:check" class="text-[#F97315] mr-2" size="1.2em" />
-                <span>Native Performance</span>
+                <span>{{ t('about.services.mobile.features.native') }}</span>
               </li>
               <li class="flex items-center">
                 <Icon name="mdi:check" class="text-[#F97315] mr-2" size="1.2em" />
-                <span>App Store Deployment</span>
+                <span>{{ t('about.services.mobile.features.deployment') }}</span>
               </li>
             </ul>
           </div>
@@ -143,8 +140,8 @@
 
       <section class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6 font-gambarino text-dark">About Me</h2>
-          <p class="text-xl text-description">The developer behind Kaktuse</p>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 font-gambarino text-dark">{{ t('about.about_me.title') }}</h2>
+          <p class="text-xl text-description">{{ t('about.about_me.subtitle') }}</p>
         </div>
 
         <div class="flex justify-center">
@@ -154,10 +151,10 @@
                 class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-primary" />
             </div>
 
-            <h3 class="text-2xl font-bold text-dark font-gambarino mb-2">Yann Thevenin</h3>
-            <p class="text-lg text-primary font-medium mb-4">Lead Developer & Founder</p>
+            <h3 class="text-2xl font-bold text-dark font-gambarino mb-2">{{ t('about.about_me.name') }}</h3>
+            <p class="text-lg text-primary font-medium mb-4">{{ t('about.about_me.role') }}</p>
             <p class="text-description mb-6 leading-relaxed">
-              Fullstack developer with an AI background, passionate about creating exceptional digital experiences with modern technologies, clean code architecture, and an ecological approach to development.
+              {{ t('about.about_me.description') }}
             </p>
 
             <div class="flex justify-center space-x-4">
@@ -179,8 +176,8 @@
 
       <section class="max-w-6xl mx-auto mt-20">
         <div class="text-center mb-12">
-          <h2 class="text-4xl md:text-5xl font-bold mb-6 font-gambarino text-dark">Technologies I Use</h2>
-          <p class="text-xl text-description">Modern tools for modern solutions</p>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 font-gambarino text-dark">{{ t('about.technologies.title') }}</h2>
+          <p class="text-xl text-description">{{ t('about.technologies.subtitle') }}</p>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-6 gap-6">
@@ -215,8 +212,10 @@
 </template>
 
 <script setup>
+const { t } = useI18n()
+
 useHead({
-  title: 'Kaktuse - About',
+  title: t('meta.about.title'),
 })
 </script>
 

@@ -2,7 +2,7 @@
   <div class="navbar-container fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 hidden md:block" :class="{ 'over-dark': isOverDarkSection }">
     <div class="navbar-background bg-white/10 backdrop-blur-lg rounded-3xl p-2 shadow-2xl border border-white/20">
       <div class="flex items-center space-x-2">
-        <router-link
+        <NuxtLink
           to="/"
           class="dock-item group relative"
           :class="$route.path === '/' ? 'active' : ''"
@@ -10,10 +10,10 @@
           <div class="icon-container">
             <Icon name="solar:home-bold-duotone" size="2em" :class="getIconClass('/', isOverDarkSection)" />
           </div>
-          <div class="tooltip">Home</div>
-        </router-link>
+          <div class="tooltip">{{ $t('nav.home') }}</div>
+        </NuxtLink>
 
-        <router-link
+        <NuxtLink
           to="/portfolio"
           class="dock-item group relative"
           :class="$route.path === '/portfolio' ? 'active' : ''"
@@ -21,10 +21,10 @@
           <div class="icon-container">
             <Icon name="solar:folder-bold-duotone" size="2em" :class="getIconClass('/portfolio', isOverDarkSection)" />
           </div>
-          <div class="tooltip">Portfolio</div>
-        </router-link>
+          <div class="tooltip">{{ $t('nav.portfolio') }}</div>
+        </NuxtLink>
 
-        <router-link
+        <NuxtLink
           to="/about"
           class="dock-item group relative"
           :class="$route.path === '/about' ? 'active' : ''"
@@ -32,10 +32,10 @@
           <div class="icon-container">
             <Icon name="solar:user-bold-duotone" size="2em" :class="getIconClass('/about', isOverDarkSection)" />
           </div>
-          <div class="tooltip">About</div>
-        </router-link>
+          <div class="tooltip">{{ $t('nav.about') }}</div>
+        </NuxtLink>
 
-        <router-link
+        <NuxtLink
           to="/contact"
           class="dock-item group relative"
           :class="$route.path === '/contact' ? 'active' : ''"
@@ -43,8 +43,8 @@
           <div class="icon-container">
             <Icon name="solar:letter-bold-duotone" size="2em" :class="getIconClass('/contact', isOverDarkSection)" />
           </div>
-          <div class="tooltip">Contact</div>
-        </router-link>
+          <div class="tooltip">{{ $t('nav.contact') }}</div>
+        </NuxtLink>
       </div>
     </div>
   </div>
@@ -52,95 +52,116 @@
   <div class="navbar-container-mobile fixed bottom-6 left-6 right-6 z-50 md:hidden" :class="{ 'over-dark': isOverDarkSection }">
     <div class="navbar-background bg-white/10 backdrop-blur-lg rounded-3xl p-3 shadow-2xl border border-white/20">
       <div class="flex justify-around items-center">
-        <router-link
+        <NuxtLink
           to="/"
           class="mobile-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-200"
           :class="$route.path === '/' ? 'bg-[#F97315]/20' : 'hover:bg-white/20'"
         >
           <Icon name="solar:home-bold-duotone" size="2em" :class="getIconClass('/', isOverDarkSection)" />
-          <span class="text-xs mt-1" :class="getTextClass('/', isOverDarkSection)">Home</span>
-        </router-link>
+          <span class="text-xs mt-1" :class="getTextClass('/', isOverDarkSection)">{{ $t('nav.home') }}</span>
+        </NuxtLink>
 
-        <router-link
+        <NuxtLink
           to="/portfolio"
           class="mobile-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-200"
           :class="$route.path === '/portfolio' ? 'bg-[#F97315]/20' : 'hover:bg-white/20'"
         >
           <Icon name="solar:folder-bold-duotone" size="2em" :class="getIconClass('/portfolio', isOverDarkSection)" />
-          <span class="text-xs mt-1" :class="getTextClass('/portfolio', isOverDarkSection)">Portfolio</span>
-        </router-link>
+          <span class="text-xs mt-1" :class="getTextClass('/portfolio', isOverDarkSection)">{{ $t('nav.portfolio') }}</span>
+        </NuxtLink>
 
-        <router-link
+        <NuxtLink
           to="/about"
           class="mobile-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-200"
           :class="$route.path === '/about' ? 'bg-[#F97315]/20' : 'hover:bg-white/20'"
         >
           <Icon name="solar:user-bold-duotone" size="2em" :class="getIconClass('/about', isOverDarkSection)" />
-          <span class="text-xs mt-1" :class="getTextClass('/about', isOverDarkSection)">About</span>
-        </router-link>
+          <span class="text-xs mt-1" :class="getTextClass('/about', isOverDarkSection)">{{ $t('nav.about') }}</span>
+        </NuxtLink>
 
-        <router-link
+        <NuxtLink
           to="/contact"
           class="mobile-nav-item flex flex-col items-center py-2 px-3 rounded-lg transition-all duration-200"
           :class="$route.path === '/contact' ? 'bg-[#F97315]/20' : 'hover:bg-white/20'"
         >
           <Icon name="solar:letter-bold-duotone" size="2em" :class="getIconClass('/contact', isOverDarkSection)" />
-          <span class="text-xs mt-1" :class="getTextClass('/contact', isOverDarkSection)">Contact</span>
-        </router-link>
+          <span class="text-xs mt-1" :class="getTextClass('/contact', isOverDarkSection)">{{ $t('nav.contact') }}</span>
+        </NuxtLink>
       </div>
     </div>
   </div>
 
-  <div class="md:hidden bg-dark text-light p-4 border-b border-gray-800">
-    <div class="flex items-center">
-      <img src="/logo.png" alt="Kaktuse Logo" class="h-8" />
-      <h1 class="text-xl font-black ml-2">Kaktuse.</h1>
+  <div v-if="!isHomePage" class="fixed top-4 left-4 right-4 md:top-6 md:left-6 md:right-6 z-40">
+    <div class="topbar-background rounded-2xl p-3 md:p-4 shadow-lg transition-all duration-500 ease-in-out"
+         :class="isScrolled ? 'bg-white/10 backdrop-blur-lg border border-white/20 text-dark' : 'bg-black/90 backdrop-blur-lg border border-gray-700/50 text-white'">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <img src="/logo.png" alt="Kaktuse Logo" class="h-6 md:h-8" />
+          <h1 class="text-lg md:text-xl font-black ml-2 transition-colors duration-500">Kaktuse.</h1>
+        </div>
+        <LanguageToggle :is-over-dark-section="!isScrolled" />
+      </div>
     </div>
   </div>
 
-  <div class="hidden md:block bg-transparent p-4">
-    <div class="flex items-center">
-      <img src="/logo.png" alt="Kaktuse Logo" class="h-10" />
-      <h1 class="text-2xl font-black ml-2 text-dark">Kaktuse.</h1>
-    </div>
+  <div v-if="isHomePage" class="fixed top-6 right-6 z-50">
+    <LanguageToggle :is-over-dark-section="false" />
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
 
+const route = useRoute()
+const { t } = useI18n()
 const isOverDarkSection = ref(false)
+const isScrolled = ref(false)
+
+const isHomePage = computed(() => route.path === '/')
 
 const checkNavbarPosition = () => {
-  const navbarMobile = document.querySelector('.navbar-container-mobile')
-  const navbarDesktop = document.querySelector('.navbar-container')
+  // Use nextTick to ensure DOM is updated
+  nextTick(() => {
+    const navbarMobile = document.querySelector('.navbar-container-mobile')
+    const navbarDesktop = document.querySelector('.navbar-container')
 
-  const isDesktop = window.innerWidth >= 768
-  const navbar = isDesktop ? navbarDesktop : navbarMobile
+    const isDesktop = window.innerWidth >= 768
+    const navbar = isDesktop ? navbarDesktop : navbarMobile
 
-  if (!navbar) return
-
-  const navbarRect = navbar.getBoundingClientRect()
-  const navbarBottom = navbarRect.bottom
-  const navbarTop = navbarRect.top
-
-  const darkSections = document.querySelectorAll('.bg-dark')
-  if (darkSections.length === 0) return
-
-  let overlapping = false
-  darkSections.forEach(section => {
-    const sectionRect = section.getBoundingClientRect()
-
-    if (navbarTop < sectionRect.bottom && navbarBottom > sectionRect.top) {
-      overlapping = true
+    if (!navbar) {
+      // Retry after a short delay if navbar elements aren't found
+      setTimeout(checkNavbarPosition, 100)
+      return
     }
-  })
 
-  isOverDarkSection.value = overlapping
+    const navbarRect = navbar.getBoundingClientRect()
+    const navbarBottom = navbarRect.bottom
+    const navbarTop = navbarRect.top
+
+    const darkSections = document.querySelectorAll('.bg-dark')
+    if (darkSections.length === 0) {
+      isOverDarkSection.value = false
+      return
+    }
+
+    let overlapping = false
+    darkSections.forEach(section => {
+      const sectionRect = section.getBoundingClientRect()
+
+      if (navbarTop < sectionRect.bottom && navbarBottom > sectionRect.top) {
+        overlapping = true
+      }
+    })
+
+    isOverDarkSection.value = overlapping
+  })
+}
+
+const checkScrollPosition = () => {
+  isScrolled.value = window.scrollY > 50
 }
 
 const getIconClass = (routePath, overDark) => {
-  const route = useRoute()
   const isActive = route.path === routePath
 
   if (isActive) {
@@ -155,7 +176,6 @@ const getIconClass = (routePath, overDark) => {
 }
 
 const getTextClass = (routePath, overDark) => {
-  const route = useRoute()
   const isActive = route.path === routePath
 
   if (isActive) {
@@ -170,9 +190,16 @@ const getTextClass = (routePath, overDark) => {
 }
 
 onMounted(() => {
-  checkNavbarPosition()
-  window.addEventListener('scroll', checkNavbarPosition)
-  window.addEventListener('resize', checkNavbarPosition)
+  // Use nextTick to ensure components are mounted before checking position
+  nextTick(() => {
+    checkNavbarPosition()
+    checkScrollPosition()
+    window.addEventListener('scroll', () => {
+      checkNavbarPosition()
+      checkScrollPosition()
+    })
+    window.addEventListener('resize', checkNavbarPosition)
+  })
 })
 
 onUnmounted(() => {
@@ -217,6 +244,8 @@ onUnmounted(() => {
 .navbar-container,
 .navbar-container-mobile {
   transition: all 0.3s ease-in-out;
+  opacity: 1;
+  visibility: visible;
 }
 
 .navbar-container .navbar-background,
@@ -237,5 +266,9 @@ onUnmounted(() => {
 
 .navbar-container.over-dark .tooltip {
   @apply bg-white/90 text-black;
+}
+
+.topbar-background {
+  transition: background-color 0.5s ease-in-out, border-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 </style>

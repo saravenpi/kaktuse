@@ -5,7 +5,39 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'shadcn-nuxt',
     '@nuxtjs/color-mode',
-    '@nuxt/icon'
+    '@nuxt/icon',
+    '@nuxtjs/i18n'
   ],
-  css: ['~/assets/css/main.css']
+  css: ['~/assets/css/main.css'],
+  i18n: {
+    locales: [
+      {
+        code: 'fr',
+        name: 'Français',
+        flag: '🇫🇷',
+        file: 'fr.json'
+      },
+      {
+        code: 'en',
+        name: 'English',
+        flag: '🇬🇧',
+        file: 'en.json'
+      },
+      {
+        code: 'de',
+        name: 'Deutsch',
+        flag: '🇩🇪',
+        file: 'de.json'
+      }
+    ],
+    defaultLocale: 'fr',
+    strategy: 'no_prefix',
+    lazy: true,
+    langDir: 'i18n/locales',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_locale',
+      redirectOn: 'root'
+    }
+  }
 })

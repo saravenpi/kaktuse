@@ -10,33 +10,33 @@
 
     </div>
 
-    <div class="flex-1 flex flex-col justify-center items-center text-center relative z-10 px-5 md:px-10">
+    <div class="flex-1 flex flex-col justify-center items-center text-center relative z-10 px-5 md:px-10 pt-16 pb-32 md:pb-28">
 
       <div class="max-w-6xl mx-auto">
         <div class="mb-8">
           <h1 class="text-6xl md:text-9xl font-black font-gambarino leading-none">
-            <span class="inline-block title-char" style="animation-delay: 0.1s;">K</span>
-            <span class="inline-block title-char" style="animation-delay: 0.2s;">a</span>
-            <span class="inline-block title-char" style="animation-delay: 0.3s;">k</span>
-            <span class="inline-block title-char" style="animation-delay: 0.4s;">t</span>
-            <span class="inline-block title-char" style="animation-delay: 0.5s;">u</span>
-            <span class="inline-block title-char" style="animation-delay: 0.6s;">s</span>
-            <span class="inline-block title-char" style="animation-delay: 0.7s;">e</span>
-            <span class="inline-block title-char text-[#F97315]" style="animation-delay: 0.8s;">.</span>
+            <span class="inline-block title-char" style="animation-delay: 0.1s;">{{ $t('home.title').charAt(0) }}</span>
+            <span class="inline-block title-char" style="animation-delay: 0.2s;">{{ $t('home.title').charAt(1) }}</span>
+            <span class="inline-block title-char" style="animation-delay: 0.3s;">{{ $t('home.title').charAt(2) }}</span>
+            <span class="inline-block title-char" style="animation-delay: 0.4s;">{{ $t('home.title').charAt(3) }}</span>
+            <span class="inline-block title-char" style="animation-delay: 0.5s;">{{ $t('home.title').charAt(4) }}</span>
+            <span class="inline-block title-char" style="animation-delay: 0.6s;">{{ $t('home.title').charAt(5) }}</span>
+            <span class="inline-block title-char" style="animation-delay: 0.7s;">{{ $t('home.title').charAt(6) }}</span>
+            <span class="inline-block title-char text-[#F97315]" style="animation-delay: 0.8s;">{{ $t('home.title').charAt(7) }}</span>
           </h1>
         </div>
 
         <div class="mb-12">
           <div class="text-2xl md:text-4xl font-medium mb-4 fade-in-up" style="animation-delay: 1.2s;">
-            <div class="mb-2">Crafting</div>
-            <div class="text-[#F97315] font-bold italic mb-2">
-              <span>{{ displayedWord }}</span>
-              <span class="typing-cursor">|</span>
+            <div class="mb-2">
+              {{ $t('home.subtitle') }}
             </div>
-            <div>web experiences</div>
+            <div class="text-[#F97315] font-bold italic">
+              {{ displayedWord }}<span class="typing-cursor">|</span>
+            </div>
           </div>
           <p class="text-lg md:text-xl text-description max-w-2xl mx-auto fade-in-up" style="animation-delay: 1.4s;">
-            Where innovation meets creativity in the digital realm
+            {{ $t('home.tagline') }}
           </p>
         </div>
 
@@ -44,30 +44,30 @@
           <NuxtLink to="/portfolio"
                     class="cta-button primary group">
             <Icon name="solar:folder-bold-duotone" size="1.2em" />
-            <span>View My Work</span>
+            <span>{{ $t('home.cta.view_work') }}</span>
             <Icon name="solar:arrow-right-bold" class="group-hover:translate-x-1 transition-transform" />
           </NuxtLink>
 
           <NuxtLink to="/contact"
                     class="cta-button secondary group">
             <Icon name="solar:letter-bold-duotone" size="1.2em" />
-            <span>Start a Project</span>
+            <span>{{ $t('home.cta.start_project') }}</span>
             <Icon name="solar:link-bold" class="group-hover:scale-110 transition-transform" />
           </NuxtLink>
         </div>
 
-        <div class="mt-16 mb-32 md:mb-20 grid grid-cols-3 gap-8 max-w-md mx-auto fade-in-up" style="animation-delay: 1.8s;">
+        <div class="mt-16 mb-8 grid grid-cols-3 gap-8 max-w-md mx-auto fade-in-up" style="animation-delay: 1.8s;">
           <div class="text-center">
             <div class="text-2xl md:text-3xl font-bold text-[#F97315] counter" data-target="47" data-show-plus="true">0</div>
-            <div class="text-sm text-description">Open Source Projects</div>
+            <div class="text-sm text-description">{{ $t('home.stats.projects') }}</div>
           </div>
           <div class="text-center">
             <div class="text-2xl md:text-3xl font-bold text-[#F97315] counter" data-target="3">0</div>
-            <div class="text-sm text-description">Years in Business</div>
+            <div class="text-sm text-description">{{ $t('home.stats.years') }}</div>
           </div>
           <div class="text-center">
             <div class="text-2xl md:text-3xl font-bold text-[#F97315] counter" data-target="24">0</div>
-            <div class="text-sm text-description">Response Time (h)</div>
+            <div class="text-sm text-description">{{ $t('home.stats.response_time') }}</div>
           </div>
         </div>
       </div>
@@ -77,22 +77,23 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, watch, computed } from 'vue'
+const { t, locale } = useI18n()
 
 useHead({
-  title: 'Kaktuse - Crafting impactful web solutions',
+  title: t('meta.home.title'),
   meta: [
-    { name: 'description', content: 'Kaktuse is a web development agency that crafts impactful web solutions for businesses and startups.' },
+    { name: 'description', content: t('meta.home.description') },
     { name: 'keywords', content: 'web development, web design, web solutions, web applications, startups, businesses' },
     { name: 'author', content: 'Yann Thevenin' },
-    { property: 'og:title', content: 'Kaktuse - Crafting impactful web solutions' },
-    { property: 'og:description', content: 'Kaktuse is a web development agency that crafts impactful web solutions for businesses and startups.' },
+    { property: 'og:title', content: t('meta.home.title') },
+    { property: 'og:description', content: t('meta.home.description') },
     { property: 'og:image', content: 'https://kaktuse.net/og.png' },
     { property: 'og:url', content: 'https://kaktuse.net' },
     { property: 'og:type', content: 'website' },
     { name: 'twitter:card', content: 'summary_large_image' },
-    { name: 'twitter:title', content: 'Kaktuse - Crafting impactful web solutions' },
-    { name: 'twitter:description', content: 'Kaktuse is a web development agency that crafts impactful web solutions for businesses and startups.' },
+    { name: 'twitter:title', content: t('meta.home.title') },
+    { name: 'twitter:description', content: t('meta.home.description') },
     { name: 'twitter:image', content: 'https://kaktuse.net/og.png' }
   ],
   link: [
@@ -100,21 +101,29 @@ useHead({
   ]
 })
 
-const displayedWord = ref('impactful')
-const words = ['impactful', 'modern', 'scalable', 'innovative', 'beautiful']
+const displayedWord = ref(t('home.typewriter.impactful'))
+const words = computed(() => [
+  t('home.typewriter.impactful'),
+  t('home.typewriter.modern'),
+  t('home.typewriter.scalable'),
+  t('home.typewriter.innovative'),
+  t('home.typewriter.beautiful')
+])
+
 let wordIndex = 0
-let charIndex = 9
+let charIndex = t('home.typewriter.impactful').length
 let isDeleting = false
+let typewriterTimer = null
 
 function startTypewriter() {
-  const currentWord = words[wordIndex]
+  const currentWord = words.value[wordIndex]
 
   if (!isDeleting) {
     displayedWord.value = currentWord.slice(0, charIndex + 1)
     charIndex++
 
     if (charIndex === currentWord.length) {
-      setTimeout(() => {
+      typewriterTimer = setTimeout(() => {
         isDeleting = true
         typewriterStep()
       }, 2000)
@@ -126,18 +135,18 @@ function startTypewriter() {
 
     if (charIndex < 0) {
       isDeleting = false
-      wordIndex = (wordIndex + 1) % words.length
+      wordIndex = (wordIndex + 1) % words.value.length
       charIndex = 0
-      setTimeout(typewriterStep, 500)
+      typewriterTimer = setTimeout(typewriterStep, 500)
       return
     }
   }
 
-  setTimeout(typewriterStep, isDeleting ? 50 : 100)
+  typewriterTimer = setTimeout(typewriterStep, isDeleting ? 50 : 100)
 }
 
 function startInitialAnimation() {
-  setTimeout(() => {
+  typewriterTimer = setTimeout(() => {
     isDeleting = true
     typewriterStep()
   }, 2000)
@@ -146,6 +155,22 @@ function startInitialAnimation() {
 function typewriterStep() {
   startTypewriter()
 }
+
+function resetTypewriter() {
+  if (typewriterTimer) {
+    clearTimeout(typewriterTimer)
+    typewriterTimer = null
+  }
+  wordIndex = 0
+  charIndex = words.value[0].length
+  isDeleting = false
+  displayedWord.value = words.value[0]
+  startInitialAnimation()
+}
+
+watch(locale, () => {
+  resetTypewriter()
+})
 
 onMounted(() => {
   setTimeout(startInitialAnimation, 2000)

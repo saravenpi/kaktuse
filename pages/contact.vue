@@ -2,17 +2,17 @@
   <div class="w-full min-h-screen bg-light text-dark bg-grid relative overflow-hidden">
     <Navbar />
 
-    <main class="p-5 md:p-10 pb-32 md:pb-32 pt-20 md:pt-10">
+    <main class="p-5 md:p-10 pb-40 md:pb-40 pt-36 md:pt-40">
       <section class="max-w-6xl mx-auto mb-16">
         <div class="text-center mb-12">
           <div class="inline-flex items-center gap-3 bg-[#F97315]/10 rounded-full px-6 py-2 mb-6 fade-in-up">
             <Icon name="solar:letter-bold-duotone" class="text-[#F97315]" size="1.2em" />
-            <span class="text-[#F97315] font-medium">Contact</span>
+            <span class="text-[#F97315] font-medium">{{ t('nav.contact') }}</span>
           </div>
 
-          <h1 class="text-5xl md:text-7xl font-bold mb-6 font-gambarino text-dark fade-in-up" style="animation-delay: 0.2s;">Let's Connect</h1>
+          <h1 class="text-5xl md:text-7xl font-bold mb-6 font-gambarino text-dark fade-in-up" style="animation-delay: 0.2s;">{{ t('contact.title') }}</h1>
           <p class="text-xl md:text-2xl text-description max-w-4xl mx-auto leading-relaxed fade-in-up" style="animation-delay: 0.4s;">
-            Ready to bring your ideas to life? Choose your preferred way to reach out
+            {{ t('contact.subtitle') }}
           </p>
         </div>
       </section>
@@ -26,14 +26,14 @@
                 <div class="icon-container mb-6">
                   <Icon name="mdi:email-outline" size="3em" class="text-[#F97315]" />
                 </div>
-                <h3 class="text-2xl font-bold mb-3 font-gambarino">Email</h3>
-                <p class="text-description mb-4">Send me a direct message</p>
+                <h3 class="text-2xl font-bold mb-3 font-gambarino">{{ t('contact.methods.email.title') }}</h3>
+                <p class="text-description mb-4">{{ t('contact.methods.email.description') }}</p>
                 <div class="email-address">
                   <span class="text-[#F97315] font-medium">contact@kaktuse.net</span>
                 </div>
                 <div class="mt-4 flex items-center text-sm text-description">
                   <Icon name="mdi:clock-outline" class="mr-2" />
-                  Usually responds within 24h
+                  {{ t('contact.quick_contact.response_time') }}
                 </div>
               </div>
             </div>
@@ -45,14 +45,14 @@
                 <div class="icon-container mb-6">
                   <Icon name="mdi:linkedin" size="3em" class="text-blue-600" />
                 </div>
-                <h3 class="text-2xl font-bold mb-3 font-gambarino">LinkedIn</h3>
-                <p class="text-description mb-4">Connect professionally</p>
+                <h3 class="text-2xl font-bold mb-3 font-gambarino">{{ t('contact.methods.linkedin.title') }}</h3>
+                <p class="text-description mb-4">{{ t('contact.methods.linkedin.description') }}</p>
                 <div class="linkedin-handle">
                   <span class="text-blue-600 font-medium">@thevyann</span>
                 </div>
                 <div class="mt-4 flex items-center text-sm text-description">
                   <Icon name="mdi:account-network" class="mr-2" />
-                  Professional networking
+                  {{ t('contact.methods.linkedin.description') }}
                 </div>
               </div>
             </div>
@@ -64,14 +64,14 @@
                 <div class="icon-container mb-6">
                   <Icon name="mdi:github" size="3em" class="text-gray-800" />
                 </div>
-                <h3 class="text-2xl font-bold mb-3 font-gambarino">GitHub</h3>
-                <p class="text-description mb-4">Check out my work</p>
+                <h3 class="text-2xl font-bold mb-3 font-gambarino">{{ t('contact.methods.github.title') }}</h3>
+                <p class="text-description mb-4">{{ t('contact.methods.github.description') }}</p>
                 <div class="github-handle">
                   <span class="text-gray-800 font-medium">@saravenpi</span>
                 </div>
                 <div class="mt-4 flex items-center text-sm text-description">
                   <Icon name="mdi:code-braces" class="mr-2" />
-                  Open source projects
+                  {{ t('contact.methods.github.description') }}
                 </div>
               </div>
             </div>
@@ -91,9 +91,9 @@
 
           <div class="relative z-10">
             <div class="text-center mb-8">
-              <h2 class="text-3xl md:text-4xl font-bold mb-4 font-gambarino">Ready to Start?</h2>
+              <h2 class="text-3xl md:text-4xl font-bold mb-4 font-gambarino">{{ t('contact.quick_contact.title') }}</h2>
               <p class="text-lg md:text-xl opacity-90 mb-8">
-                Got a project in mind? Let's discuss how we can bring it to life together.
+                {{ t('contact.quick_contact.subtitle') }}
               </p>
             </div>
 
@@ -101,14 +101,14 @@
               <button @click="openQuickEmail"
                       class="quick-action-btn bg-[#F97315] hover:bg-[#ea580c] text-white">
                 <Icon name="mdi:rocket-launch" size="1.5em" />
-                <span>Start a Project</span>
+                <span>{{ t('contact.quick_contact.email_button') }}</span>
                 <Icon name="mdi:arrow-right" />
               </button>
 
               <button @click="scheduleCall"
                       class="quick-action-btn bg-white/10 hover:bg-white/20 text-white border border-white/20">
                 <Icon name="mdi:calendar-clock" size="1.5em" />
-                <span>Schedule a Call</span>
+                <span>{{ t('contact.quick_contact.schedule_button') }}</span>
                 <Icon name="mdi:external-link" />
               </button>
             </div>
@@ -120,7 +120,7 @@
                   <div class="absolute inset-0 w-2 h-2 bg-green-400 rounded-full animate-ping opacity-75"></div>
                   <div class="absolute inset-0 w-2 h-2 bg-green-300 rounded-full halo-pulse"></div>
                 </div>
-                <span class="text-sm">Usually online • Quick responses</span>
+                <span class="text-sm">{{ t('contact.quick_contact.response_time') }}</span>
               </div>
             </div>
           </div>
@@ -129,8 +129,8 @@
 
       <section class="max-w-4xl mx-auto mt-20">
         <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 font-gambarino text-dark">Quick Answers</h2>
-          <p class="text-lg text-description">Common questions about working together</p>
+          <h2 class="text-3xl md:text-4xl font-bold mb-4 font-gambarino text-dark">{{ t('contact.faq.title') }}</h2>
+          <p class="text-lg text-description">{{ t('contact.faq.title') }}</p>
         </div>
 
         <div class="space-y-4">
@@ -159,29 +159,30 @@
 
 <script setup>
 import { ref } from 'vue'
+const { t } = useI18n()
 
 useHead({
-  title: 'Kaktuse - Contact',
+  title: t('meta.contact.title'),
 })
 
 const openFaq = ref(null)
 
 const faqs = [
   {
-    question: "What's your typical project timeline?",
-    answer: "Most projects take 3-8 weeks depending on complexity. I'll provide a detailed timeline during our initial discussion."
+    question: t('contact.faq.q1.question'),
+    answer: t('contact.faq.q1.answer')
   },
   {
-    question: "Do you work with international clients?",
-    answer: "Absolutely! I work with clients worldwide and am comfortable with different time zones and communication styles."
+    question: t('contact.faq.q2.question'),
+    answer: t('contact.faq.q2.answer')
   },
   {
-    question: "What technologies do you specialize in?",
-    answer: "I specialize in Vue.js, Nuxt, TypeScript, SvelteKit, Golang, and Tailwind CSS for modern, scalable web applications."
+    question: t('contact.faq.q3.question'),
+    answer: t('contact.faq.q3.answer')
   },
   {
-    question: "How do you handle project pricing?",
-    answer: "I provide custom quotes based on project scope, timeline, and requirements. Let's discuss your needs for an accurate estimate."
+    question: t('contact.faq.q4.question'),
+    answer: t('contact.faq.q4.answer')
   }
 ]
 
