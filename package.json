@@ -27,6 +27,10 @@
     "estree-walker": "^2.0.2"
   },
   "overrides": {
-    "estree-walker": "^2.0.2"
+    "estree-walker": "^2.0.2",
+    "@rollup/rollup-linux-x64-gnu": "*"
+  },
+  "engines": {
+    "node": ">=20.0.0"
   }
 }
