@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-[100dvh] flex flex-col bg-light text-dark bg-grid relative overflow-hidden">
+  <div class="w-full bg-light text-dark bg-grid relative">
     <Navbar />
 
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
@@ -10,7 +10,7 @@
 
     </div>
 
-    <div class="flex-1 flex flex-col justify-center items-center text-center relative z-10 px-5 md:px-10 pt-16 pb-56 sm:pb-48 md:pb-28">
+    <div class="min-h-screen flex flex-col justify-center items-center text-center relative z-10 px-5 md:px-10 pt-16 pb-4 md:pb-28">
 
       <div class="max-w-6xl mx-auto">
         <div class="mb-8">
@@ -56,7 +56,7 @@
           </NuxtLink>
         </div>
 
-        <div class="mt-16 mb-8 grid grid-cols-3 gap-8 max-w-md mx-auto fade-in-up" style="animation-delay: 1.8s;">
+        <div class="mt-16 mb-32 sm:mb-28 md:mb-8 grid grid-cols-3 gap-8 max-w-md mx-auto fade-in-up" style="animation-delay: 1.8s;">
           <div class="text-center">
             <div class="text-2xl md:text-3xl font-bold text-[#F97315] counter" data-target="47" data-show-plus="true">0</div>
             <div class="text-sm text-description">{{ $t('home.stats.projects') }}</div>
@@ -70,6 +70,8 @@
             <div class="text-sm text-description">{{ $t('home.stats.response_time') }}</div>
           </div>
         </div>
+
+
       </div>
     </div>
 
@@ -315,6 +317,6 @@ function getOrbStyle(index) {
   .cta-button {
     @apply px-6 py-3;
   }
-
 }
+
 </style>
