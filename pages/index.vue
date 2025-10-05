@@ -10,7 +10,7 @@
 
     </div>
 
-    <div class="flex-1 flex flex-col justify-center items-center text-center relative z-10 px-5 md:px-10 pt-16 pb-40 md:pb-28">
+    <div class="flex-1 flex flex-col justify-center items-center text-center relative z-10 px-5 md:px-10 pt-16 pb-48 md:pb-28">
 
       <div class="max-w-6xl mx-auto">
         <div class="mb-8">
