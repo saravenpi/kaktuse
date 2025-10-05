@@ -23,7 +23,7 @@
     "stats": {
       "projects": "Open Source Projects",
       "years": "Years in Business",
-      "response_time": "Response Time (h)"
+      "response_time": "Response Time"
     }
   },
   "about": {
@@ -155,3 +155,4 @@
     }
   }
 }
+

@@ -66,7 +66,7 @@
             <div class="text-sm text-description">{{ $t('home.stats.years') }}</div>
           </div>
           <div class="text-center">
-            <div class="text-2xl md:text-3xl font-bold text-[#F97315] counter" data-target="24">0</div>
+            <div class="text-2xl md:text-3xl font-bold text-[#F97315] counter" data-target="24" data-show-h="true">0</div>
             <div class="text-sm text-description">{{ $t('home.stats.response_time') }}</div>
           </div>
         </div>
@@ -182,13 +182,20 @@ onMounted(() => {
     counters.forEach(counter => {
       const target = parseInt(counter.dataset.target)
       const showPlus = counter.dataset.showPlus === 'true'
+      const showH = counter.dataset.showH === 'true'
       let current = 0
       const increment = target / 60
       const timer = setInterval(() => {
         current += increment
         counter.textContent = Math.floor(current)
         if (current >= target) {
-          counter.textContent = showPlus ? target + '+' : target
+          if (showPlus) {
+            counter.textContent = target + '+'
+          } else if (showH) {
+            counter.textContent = target + 'h'
+          } else {
+            counter.textContent = target
+          }
           clearInterval(timer)
         }
       }, 30)
