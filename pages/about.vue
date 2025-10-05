@@ -1,9 +1,8 @@
 <template>
-  <div class="min-h-screen w-full bg-light bg-grid text-dark">
+  <div class="w-full min-h-screen bg-light text-dark bg-grid relative overflow-hidden">
     <Navbar />
 
     <main class="p-5 md:p-10 pb-32 md:pb-32 pt-20 md:pt-10">
-      <!-- Hero Section -->
       <section class="max-w-6xl mx-auto mb-16">
         <div class="text-center mb-12">
           <div class="inline-flex items-center gap-3 bg-[#F97315]/10 rounded-full px-6 py-2 mb-6 fade-in-up">
@@ -18,18 +17,17 @@
         </div>
       </section>
 
-      <!-- Mission Section -->
       <section class="max-w-6xl mx-auto mb-20">
         <div class="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 class="text-3xl md:text-4xl font-bold mb-6 font-gambarino text-dark">My Mission</h2>
             <p class="text-lg md:text-xl mb-6 text-description leading-relaxed">
-              I am a dedicated web developer committed to delivering innovative and tailored solutions to meet the unique
+              I am a dedicated fullstack developer with an AI background, committed to delivering innovative and tailored solutions to meet the unique
               needs of my clients.
             </p>
             <p class="text-lg md:text-xl mb-6 text-description leading-relaxed">
-              I work collaboratively with clients to create high-quality, scalable, and user-friendly web applications
-              that drive real business results.
+              I work collaboratively with clients to create high-quality, scalable, and user-friendly applications
+              that drive real business results, with a focus on decentralized services and an ecological approach to development.
             </p>
             <p class="text-lg md:text-xl text-description leading-relaxed">
               I pride myself on my commitment to excellence, attention to detail, and ensuring customer satisfaction. Whether
@@ -62,7 +60,87 @@
         </div>
       </section>
 
-      <!-- About Me Section -->
+      <section class="max-w-6xl mx-auto mb-20">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 font-gambarino text-dark">My Services</h2>
+          <p class="text-xl text-description">Comprehensive solutions for your digital needs</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+            <div class="bg-[#F97315]/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+              <Icon name="mdi:brain" class="text-[#F97315]" size="2em" />
+            </div>
+            <h3 class="text-2xl font-bold mb-4 font-gambarino text-dark">AI Integration</h3>
+            <p class="text-description leading-relaxed mb-4">
+              Seamlessly integrate artificial intelligence into your applications to enhance functionality, automate processes, and provide intelligent user experiences.
+            </p>
+            <ul class="text-description space-y-2">
+              <li class="flex items-center">
+                <Icon name="mdi:check" class="text-[#F97315] mr-2" size="1.2em" />
+                <span>Machine Learning Models</span>
+              </li>
+              <li class="flex items-center">
+                <Icon name="mdi:check" class="text-[#F97315] mr-2" size="1.2em" />
+                <span>Natural Language Processing</span>
+              </li>
+              <li class="flex items-center">
+                <Icon name="mdi:check" class="text-[#F97315] mr-2" size="1.2em" />
+                <span>AI-Powered Analytics</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+            <div class="bg-[#F97315]/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+              <Icon name="mdi:web" class="text-[#F97315]" size="2em" />
+            </div>
+            <h3 class="text-2xl font-bold mb-4 font-gambarino text-dark">Website Development</h3>
+            <p class="text-description leading-relaxed mb-4">
+              Create modern, responsive, and high-performance websites that deliver exceptional user experiences and drive business growth.
+            </p>
+            <ul class="text-description space-y-2">
+              <li class="flex items-center">
+                <Icon name="mdi:check" class="text-[#F97315] mr-2" size="1.2em" />
+                <span>Responsive Design</span>
+              </li>
+              <li class="flex items-center">
+                <Icon name="mdi:check" class="text-[#F97315] mr-2" size="1.2em" />
+                <span>SEO Optimization</span>
+              </li>
+              <li class="flex items-center">
+                <Icon name="mdi:check" class="text-[#F97315] mr-2" size="1.2em" />
+                <span>Performance Optimization</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
+            <div class="bg-[#F97315]/10 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+              <Icon name="mdi:cellphone" class="text-[#F97315]" size="2em" />
+            </div>
+            <h3 class="text-2xl font-bold mb-4 font-gambarino text-dark">Mobile Applications</h3>
+            <p class="text-description leading-relaxed mb-4">
+              Develop native and cross-platform mobile applications that provide seamless user experiences across all devices and platforms.
+            </p>
+            <ul class="text-description space-y-2">
+              <li class="flex items-center">
+                <Icon name="mdi:check" class="text-[#F97315] mr-2" size="1.2em" />
+                <span>Cross-Platform Development</span>
+              </li>
+              <li class="flex items-center">
+                <Icon name="mdi:check" class="text-[#F97315] mr-2" size="1.2em" />
+                <span>Native Performance</span>
+              </li>
+              <li class="flex items-center">
+                <Icon name="mdi:check" class="text-[#F97315] mr-2" size="1.2em" />
+                <span>App Store Deployment</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <section class="max-w-6xl mx-auto">
         <div class="text-center mb-12">
           <h2 class="text-4xl md:text-5xl font-bold mb-6 font-gambarino text-dark">About Me</h2>
@@ -79,20 +157,18 @@
             <h3 class="text-2xl font-bold text-dark font-gambarino mb-2">Yann Thevenin</h3>
             <p class="text-lg text-primary font-medium mb-4">Lead Developer & Founder</p>
             <p class="text-description mb-6 leading-relaxed">
-              Passionate about creating exceptional digital experiences with modern technologies and clean code architecture.
+              Fullstack developer with an AI background, passionate about creating exceptional digital experiences with modern technologies, clean code architecture, and an ecological approach to development.
             </p>
 
             <div class="flex justify-center space-x-4">
               <a href="https://github.com/saravenpi" target="_blank"
-                class="social-card text-[#F97315] p-3 rounded-full transition-all duration-300 flex items-center justify-center"
-                style="background: #FFF; border: 2px solid #7D6666;"
+                class="social-card text-[#F97315] p-3 rounded-full transition-all duration-300 flex items-center justify-center bg-[#F97315]/10"
                 aria-label="GitHub Profile">
                 <Icon name="mdi:github" size="1.5em" />
               </a>
 
               <a href="https://linkedin.com/in/thevyann" target="_blank"
-                class="social-card text-[#F97315] p-3 rounded-full transition-all duration-300 flex items-center justify-center"
-                style="background: #FFF; border: 2px solid #7D6666;"
+                class="social-card text-[#F97315] p-3 rounded-full transition-all duration-300 flex items-center justify-center bg-[#F97315]/10"
                 aria-label="LinkedIn Profile">
                 <Icon name="mdi:linkedin" size="1.5em" />
               </a>
@@ -101,7 +177,6 @@
         </div>
       </section>
 
-      <!-- Technologies Section -->
       <section class="max-w-6xl mx-auto mt-20">
         <div class="text-center mb-12">
           <h2 class="text-4xl md:text-5xl font-bold mb-6 font-gambarino text-dark">Technologies I Use</h2>
@@ -146,7 +221,6 @@ useHead({
 </script>
 
 <style scoped>
-/* Fade in up animation */
 .fade-in-up {
   animation: fadeInUp 0.8s ease-out forwards;
   opacity: 0;
@@ -160,7 +234,6 @@ useHead({
   }
 }
 
-/* Profile and Social Cards */
 .profile-card {
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -171,14 +244,25 @@ useHead({
 }
 
 .social-card {
-  transition: transform 0.3s, opacity 0.5s, box-shadow 0.3s;
+  transition: all 0.3s ease;
   opacity: 1;
-  background: #FFF;
-  border: 2px solid #7D6666;
+  position: relative;
+  overflow: hidden;
 }
 
 .social-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px) scale(1.05) rotate(3deg);
+  box-shadow: 0 20px 40px rgba(249, 115, 21, 0.3);
+  background: linear-gradient(135deg, #F97315, #ff8533);
+  color: white;
+}
+
+.social-card:hover .iconify {
+  transform: scale(1.2) rotate(-3deg);
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.social-card .iconify {
+  transition: all 0.3s ease;
 }
 </style>

@@ -1,10 +1,8 @@
 <template>
-  <div class="w-full min-h-screen bg-light bg-grid text-dark relative overflow-hidden">
+  <div class="w-full min-h-screen bg-light text-dark bg-grid relative overflow-hidden">
     <Navbar />
 
-    <!-- Animated Background Elements -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
-      <!-- Floating Orbs -->
       <div v-for="i in 6" :key="'orb-' + i"
            class="absolute rounded-full bg-gradient-to-br from-[#F97315]/10 to-[#F97315]/3 blur-2xl"
            :class="getOrbSize(i)"
@@ -13,11 +11,9 @@
 
     <main class="relative z-10 p-5 md:p-10 pb-32 md:pb-32 pt-20 md:pt-10">
 
-      <!-- Hero Section -->
       <section class="max-w-7xl mx-auto mb-16">
         <div class="text-center mb-12">
           <div class="inline-flex items-center gap-3 bg-[#F97315]/10 rounded-full px-6 py-2 mb-6 fade-in-up relative overflow-hidden">
-            <!-- Background Pattern -->
             <div class="absolute inset-0 opacity-10 overflow-hidden">
               <div v-for="i in 30" :key="'pill-' + i"
                    class="absolute bg-[#F97315] rounded-full dot-rain"
@@ -37,32 +33,14 @@
           </p>
         </div>
 
-        <!-- Stats -->
-        <div class="flex justify-center gap-12 mb-16 fade-in-up" style="animation-delay: 0.6s;">
-          <div class="text-center">
-            <div class="text-3xl font-bold text-[#F97315] mb-1">{{ projects.length }}+</div>
-            <div class="text-description">Projects</div>
-          </div>
-          <div class="text-center">
-            <div class="text-3xl font-bold text-[#F97315] mb-1">5+</div>
-            <div class="text-description">Technologies</div>
-          </div>
-          <div class="text-center">
-            <div class="text-3xl font-bold text-[#F97315] mb-1">100%</div>
-            <div class="text-description">Success Rate</div>
-          </div>
-        </div>
       </section>
 
-      <!-- Projects Grid -->
       <section class="max-w-7xl mx-auto">
-        <!-- Flexible centered grid -->
         <div class="projects-container">
           <div v-for="(project, index) in projects" :key="project.id"
             class="flex flex-col project-card p-6 rounded-xl shadow-lg justify-between gap-4 stagger-animation"
-            :style="{ animationDelay: `${0.8 + (index * 0.15)}s` }">
+            :style="{ animationDelay: `${0.2 + (index * 0.05)}s` }">
 
-            <!-- Keep your existing card content exactly as is -->
             <div>
               <Icon :name="project.icon" class="text-4xl text-center mb-3 text-description" />
               <h2 class="text-3xl font-semibold mb-2">{{ project.title }}</h2>
@@ -93,17 +71,8 @@
           </div>
         </div>
 
-        <!-- Call to Action -->
-        <div class="text-center mt-20 fade-in-up" style="animation-delay: 2s;">
+        <div class="text-center mt-20 fade-in-up" style="animation-delay: 0.3s;">
           <div class="bg-dark rounded-3xl p-8 md:p-12 text-light relative overflow-hidden">
-            <!-- Background Pattern -->
-            <div class="absolute inset-0 opacity-15 overflow-hidden">
-              <div v-for="i in 150" :key="i"
-                   class="absolute bg-white rounded-full dot-rain"
-                   :class="getRainDotSize(i)"
-                   :style="getRainDotStyle(i)"></div>
-            </div>
-
             <div class="relative z-10">
               <h2 class="text-3xl md:text-4xl font-bold mb-4 font-gambarino">Have a Project in Mind?</h2>
               <p class="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
@@ -215,18 +184,17 @@ export default {
       }
     },
     getRainDotSize(index) {
-      const rand = (index * 0.618) % 1 // Use golden ratio for better distribution
+      const rand = (index * 0.618) % 1
       if (rand > 0.8) return 'w-3 h-3'
       if (rand > 0.6) return 'w-2 h-2'
       if (rand > 0.3) return 'w-1.5 h-1.5'
       return 'w-1 h-1'
     },
     getRainDotStyle(index) {
-      // Use index-based pseudo-random generation for consistent positioning
-      const x = ((index * 17) % 97) // Prime numbers for better distribution
-      const startY = -10 - ((index * 19) % 30) // Start above the container
-      const delay = ((index * 0.2) % 8) // Stagger the rain drops
-      const duration = 3 + (((index * 13) % 20) * 0.2) // Rain fall duration
+      const x = ((index * 17) % 97)
+      const startY = -10 - ((index * 19) % 30)
+      const delay = ((index * 0.2) % 8)
+      const duration = 3 + (((index * 13) % 20) * 0.2)
       const opacity = 0.4 + (((index * 11) % 40) * 0.01)
 
       return {
@@ -263,7 +231,6 @@ export default {
 </script>
 
 <style scoped>
-/* Keep your existing project card styles exactly as they are */
 .project-card {
   transition: transform 0.3s, opacity 0.5s, box-shadow 0.3s;
   opacity: 0;
@@ -276,7 +243,6 @@ export default {
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-/* New animations */
 .fade-in-up {
   animation: fadeInUp 0.8s ease-out forwards;
   opacity: 0;
@@ -294,9 +260,8 @@ export default {
   }
 }
 
-/* CTA Buttons */
 .cta-button {
-  @apply inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-medium transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1;
+  @apply inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl font-medium transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1;
 }
 
 .cta-button.primary {
@@ -307,7 +272,6 @@ export default {
   @apply bg-white/10 border-2 border-white/20 text-white hover:border-white/40 hover:bg-white/20;
 }
 
-/* Floating Orbs */
 .absolute.rounded-full {
   animation: float 15s ease-in-out infinite;
 }
@@ -327,7 +291,6 @@ export default {
   }
 }
 
-/* Flexible Centered Layout */
 .projects-container {
   display: flex;
   flex-wrap: wrap;
@@ -343,7 +306,6 @@ export default {
   min-width: 320px;
 }
 
-/* Responsive breakpoints */
 @media (min-width: 640px) {
   .project-card {
     width: calc(50% - 1rem);
@@ -363,7 +325,6 @@ export default {
   }
 }
 
-/* Mobile optimization */
 @media (max-width: 639px) {
   .projects-container {
     max-width: 500px;
@@ -376,7 +337,6 @@ export default {
   }
 }
 
-/* Rain Animation */
 .dot-rain {
   animation: dotRain infinite linear;
 }

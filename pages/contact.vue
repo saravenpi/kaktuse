@@ -1,9 +1,8 @@
 <template>
-  <div class="w-full min-h-screen bg-light bg-grid text-dark">
+  <div class="w-full min-h-screen bg-light text-dark bg-grid relative overflow-hidden">
     <Navbar />
 
     <main class="p-5 md:p-10 pb-32 md:pb-32 pt-20 md:pt-10">
-      <!-- Hero Section -->
       <section class="max-w-6xl mx-auto mb-16">
         <div class="text-center mb-12">
           <div class="inline-flex items-center gap-3 bg-[#F97315]/10 rounded-full px-6 py-2 mb-6 fade-in-up">
@@ -18,11 +17,9 @@
         </div>
       </section>
 
-      <!-- Contact Methods Grid -->
       <section class="max-w-6xl mx-auto mb-20">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-          <!-- Email Card -->
           <div class="contact-card group cursor-pointer" @click="openEmail">
             <div class="contact-card-inner">
               <div class="flex flex-col items-center text-center">
@@ -42,7 +39,6 @@
             </div>
           </div>
 
-          <!-- LinkedIn Card -->
           <div class="contact-card group cursor-pointer" @click="openLinkedIn">
             <div class="contact-card-inner">
               <div class="flex flex-col items-center text-center">
@@ -62,7 +58,6 @@
             </div>
           </div>
 
-          <!-- GitHub Card -->
           <div class="contact-card group cursor-pointer" @click="openGitHub">
             <div class="contact-card-inner">
               <div class="flex flex-col items-center text-center">
@@ -85,10 +80,8 @@
         </div>
       </section>
 
-      <!-- Quick Contact Section -->
       <section class="max-w-4xl mx-auto">
         <div class="bg-dark rounded-3xl p-8 md:p-12 text-light relative overflow-hidden">
-          <!-- Background Pattern -->
           <div class="absolute inset-0 opacity-15 overflow-hidden">
             <div v-for="i in 150" :key="i"
                  class="absolute bg-white rounded-full"
@@ -105,7 +98,6 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-6">
-              <!-- Quick Email Button -->
               <button @click="openQuickEmail"
                       class="quick-action-btn bg-[#F97315] hover:bg-[#ea580c] text-white">
                 <Icon name="mdi:rocket-launch" size="1.5em" />
@@ -113,7 +105,6 @@
                 <Icon name="mdi:arrow-right" />
               </button>
 
-              <!-- Schedule Call Button -->
               <button @click="scheduleCall"
                       class="quick-action-btn bg-white/10 hover:bg-white/20 text-white border border-white/20">
                 <Icon name="mdi:calendar-clock" size="1.5em" />
@@ -122,13 +113,10 @@
               </button>
             </div>
 
-            <!-- Response Time -->
             <div class="mt-8 text-center">
               <div class="inline-flex items-center bg-white/10 rounded-full px-4 py-2">
                 <div class="relative mr-2">
-                  <!-- Center dot (always visible) -->
                   <div class="w-2 h-2 bg-green-400 rounded-full relative z-10"></div>
-                  <!-- Animated halos -->
                   <div class="absolute inset-0 w-2 h-2 bg-green-400 rounded-full animate-ping opacity-75"></div>
                   <div class="absolute inset-0 w-2 h-2 bg-green-300 rounded-full halo-pulse"></div>
                 </div>
@@ -139,7 +127,6 @@
         </div>
       </section>
 
-      <!-- FAQ Section -->
       <section class="max-w-4xl mx-auto mt-20">
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold mb-4 font-gambarino text-dark">Quick Answers</h2>
@@ -221,12 +208,11 @@ function openQuickEmail() {
 }
 
 function scheduleCall() {
-  // This could be integrated with Calendly or similar
   window.open('mailto:contact@kaktuse.net?subject=Schedule a Call&body=Hi Yann,%0A%0AI\'d like to schedule a call to discuss my project.%0A%0APreferred time:%0AProject details:%0A%0AThanks!', '_blank')
 }
 
 function getDotSize(index) {
-  const rand = (index * 0.618) % 1 // Use golden ratio for better distribution
+  const rand = (index * 0.618) % 1
   if (rand > 0.8) return 'w-3 h-3'
   if (rand > 0.6) return 'w-2 h-2'
   if (rand > 0.3) return 'w-1.5 h-1.5'
@@ -234,16 +220,14 @@ function getDotSize(index) {
 }
 
 function getDotAnimation(index) {
-  // All dots will use the falling rain animation
   return 'dot-rain'
 }
 
 function getDotStyle(index) {
-  // Use index-based pseudo-random generation for consistent positioning
-  const x = ((index * 17) % 97) // Prime numbers for better distribution
-  const startY = -10 - ((index * 19) % 30) // Start above the container
-  const delay = ((index * 0.2) % 8) // Stagger the rain drops
-  const duration = 3 + (((index * 13) % 20) * 0.2) // Rain fall duration
+  const x = ((index * 17) % 97)
+  const startY = -10 - ((index * 19) % 30)
+  const delay = ((index * 0.2) % 8)
+  const duration = 3 + (((index * 13) % 20) * 0.2)
   const opacity = 0.4 + (((index * 11) % 40) * 0.01)
 
   return {
@@ -257,9 +241,9 @@ function getDotStyle(index) {
 </script>
 
 <style scoped>
-/* Contact Cards */
 .contact-card {
-  @apply bg-white rounded-2xl border-2 border-gray-100 p-6 transition-all duration-300 hover:shadow-lg hover:border-gray-200;
+  @apply bg-white rounded-2xl p-6 transition-all duration-300 hover:shadow-lg;
+  border: 2px solid #7D6666;
 }
 
 .contact-card:hover {
@@ -274,12 +258,10 @@ function getDotStyle(index) {
   @apply w-20 h-20 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-gray-100 transition-colors;
 }
 
-/* Quick Action Buttons */
 .quick-action-btn {
   @apply flex items-center justify-center gap-3 p-4 rounded-xl font-medium transition-all duration-200 hover:transform hover:scale-105;
 }
 
-/* FAQ Items */
 .faq-item {
   @apply transition-all duration-300;
 }
@@ -292,7 +274,6 @@ function getDotStyle(index) {
   @apply border-t border-gray-100;
 }
 
-/* FAQ Unfold Animation */
 .faq-unfold-enter-active {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   transform-origin: top;
@@ -327,7 +308,6 @@ function getDotStyle(index) {
   max-height: 0;
 }
 
-/* Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
@@ -345,7 +325,6 @@ function getDotStyle(index) {
   animation: float 6s ease-in-out infinite 4s;
 }
 
-/* Fade in up animation */
 .fade-in-up {
   animation: fadeInUp 0.8s ease-out forwards;
   opacity: 0;
@@ -359,12 +338,10 @@ function getDotStyle(index) {
   }
 }
 
-/* Dot Animations */
 .dot-rain {
   animation: dotRain infinite linear;
 }
 
-/* Status Indicator */
 .halo-pulse {
   animation: haloPulse 2s infinite ease-in-out;
 }

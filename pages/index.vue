@@ -2,9 +2,7 @@
   <div class="w-full h-[100dvh] flex flex-col bg-light text-dark bg-grid relative overflow-hidden">
     <Navbar />
 
-    <!-- Animated Background Elements -->
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
-      <!-- Floating Orbs -->
       <div v-for="i in 8" :key="'orb-' + i"
            class="absolute rounded-full bg-gradient-to-br from-[#F97315]/20 to-[#F97315]/5 blur-xl"
            :class="getOrbSize(i)"
@@ -12,12 +10,9 @@
 
     </div>
 
-    <!-- Main Content -->
     <div class="flex-1 flex flex-col justify-center items-center text-center relative z-10 px-5 md:px-10">
 
-      <!-- Hero Section -->
       <div class="max-w-6xl mx-auto">
-        <!-- Main Title with Staggered Animation -->
         <div class="mb-8">
           <h1 class="text-6xl md:text-9xl font-black font-gambarino leading-none">
             <span class="inline-block title-char" style="animation-delay: 0.1s;">K</span>
@@ -31,22 +26,20 @@
           </h1>
         </div>
 
-        <!-- Dynamic Tagline -->
         <div class="mb-12">
-          <h2 class="text-2xl md:text-4xl font-medium mb-4 fade-in-up" style="animation-delay: 1.2s;">
-            Crafting
-            <span class="relative inline-block mx-2">
-              <span class="text-[#F97315] font-bold italic">{{ displayedWord }}</span>
+          <div class="text-2xl md:text-4xl font-medium mb-4 fade-in-up" style="animation-delay: 1.2s;">
+            <div class="mb-2">Crafting</div>
+            <div class="text-[#F97315] font-bold italic mb-2">
+              <span>{{ displayedWord }}</span>
               <span class="typing-cursor">|</span>
-            </span>
-            web experiences
-          </h2>
+            </div>
+            <div>web experiences</div>
+          </div>
           <p class="text-lg md:text-xl text-description max-w-2xl mx-auto fade-in-up" style="animation-delay: 1.4s;">
             Where innovation meets creativity in the digital realm
           </p>
         </div>
 
-        <!-- Call to Action Buttons -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in-up" style="animation-delay: 1.6s;">
           <NuxtLink to="/portfolio"
                     class="cta-button primary group">
@@ -63,33 +56,23 @@
           </NuxtLink>
         </div>
 
-        <!-- Quick Stats -->
-        <div class="mt-16 grid grid-cols-3 gap-8 max-w-md mx-auto fade-in-up" style="animation-delay: 1.8s;">
+        <div class="mt-16 mb-32 md:mb-20 grid grid-cols-3 gap-8 max-w-md mx-auto fade-in-up" style="animation-delay: 1.8s;">
           <div class="text-center">
-            <div class="text-2xl md:text-3xl font-bold text-[#F97315] counter" data-target="50">0</div>
-            <div class="text-sm text-description">Projects</div>
+            <div class="text-2xl md:text-3xl font-bold text-[#F97315] counter" data-target="47" data-show-plus="true">0</div>
+            <div class="text-sm text-description">Open Source Projects</div>
           </div>
           <div class="text-center">
             <div class="text-2xl md:text-3xl font-bold text-[#F97315] counter" data-target="3">0</div>
-            <div class="text-sm text-description">Years</div>
+            <div class="text-sm text-description">Years in Business</div>
           </div>
           <div class="text-center">
             <div class="text-2xl md:text-3xl font-bold text-[#F97315] counter" data-target="24">0</div>
-            <div class="text-sm text-description">Response (h)</div>
+            <div class="text-sm text-description">Response Time (h)</div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Scroll Indicator -->
-    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 scroll-indicator fade-in-up" style="animation-delay: 2s;">
-      <div class="flex flex-col items-center text-description">
-        <span class="text-sm mb-2">Explore</span>
-        <div class="w-6 h-10 border-2 border-current rounded-full relative">
-          <div class="w-1 h-3 bg-current rounded-full absolute top-2 left-1/2 transform -translate-x-1/2 scroll-dot"></div>
-        </div>
-      </div>
-    </div>
   </div>
 </template>
 
@@ -117,22 +100,20 @@ useHead({
   ]
 })
 
-const displayedWord = ref('')
+const displayedWord = ref('impactful')
 const words = ['impactful', 'modern', 'scalable', 'innovative', 'beautiful']
 let wordIndex = 0
-let charIndex = 0
+let charIndex = 9
 let isDeleting = false
 
 function startTypewriter() {
   const currentWord = words[wordIndex]
 
   if (!isDeleting) {
-    // Typing
     displayedWord.value = currentWord.slice(0, charIndex + 1)
     charIndex++
 
     if (charIndex === currentWord.length) {
-      // Word complete, wait then start deleting
       setTimeout(() => {
         isDeleting = true
         typewriterStep()
@@ -140,12 +121,10 @@ function startTypewriter() {
       return
     }
   } else {
-    // Deleting
     displayedWord.value = currentWord.slice(0, charIndex)
     charIndex--
 
     if (charIndex < 0) {
-      // Deletion complete, move to next word
       isDeleting = false
       wordIndex = (wordIndex + 1) % words.length
       charIndex = 0
@@ -157,26 +136,32 @@ function startTypewriter() {
   setTimeout(typewriterStep, isDeleting ? 50 : 100)
 }
 
+function startInitialAnimation() {
+  setTimeout(() => {
+    isDeleting = true
+    typewriterStep()
+  }, 2000)
+}
+
 function typewriterStep() {
   startTypewriter()
 }
 
 onMounted(() => {
-  // Start typewriter effect after initial animation
-  setTimeout(startTypewriter, 2000)
+  setTimeout(startInitialAnimation, 2000)
 
-  // Counter animations
   setTimeout(() => {
     const counters = document.querySelectorAll('.counter')
     counters.forEach(counter => {
       const target = parseInt(counter.dataset.target)
+      const showPlus = counter.dataset.showPlus === 'true'
       let current = 0
       const increment = target / 60
       const timer = setInterval(() => {
         current += increment
         counter.textContent = Math.floor(current)
         if (current >= target) {
-          counter.textContent = target
+          counter.textContent = showPlus ? target + '+' : target
           clearInterval(timer)
         }
       }, 30)
@@ -190,7 +175,6 @@ function getOrbSize(index) {
 }
 
 function getOrbStyle(index) {
-  // Pseudo-random positioning
   const x = ((index * 23) % 85) + 5
   const y = ((index * 17) % 70) + 10
   const delay = (index * 0.8) % 4
@@ -206,7 +190,6 @@ function getOrbStyle(index) {
 </script>
 
 <style scoped>
-/* Character Animation */
 .title-char {
   animation: bounceInDown 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
   opacity: 0;
@@ -231,7 +214,6 @@ function getOrbStyle(index) {
   }
 }
 
-/* Fade in up animation */
 .fade-in-up {
   animation: fadeInUp 0.8s ease-out forwards;
   opacity: 0;
@@ -245,7 +227,6 @@ function getOrbStyle(index) {
   }
 }
 
-/* CTA Buttons */
 .cta-button {
   @apply inline-flex items-center gap-3 px-8 py-4 rounded-2xl font-medium transition-all duration-300 hover:shadow-lg hover:transform hover:-translate-y-1;
 }
@@ -258,7 +239,6 @@ function getOrbStyle(index) {
   @apply bg-white border-2 border-gray-200 text-gray-900 hover:border-[#F97315] hover:text-[#F97315] hover:shadow-gray-200/50;
 }
 
-/* Typing Cursor */
 .typing-cursor {
   animation: blink 1s infinite;
   color: #F97315;
@@ -269,7 +249,6 @@ function getOrbStyle(index) {
   51%, 100% { opacity: 0; }
 }
 
-/* Floating Orbs */
 .absolute.rounded-full {
   animation: float 12s ease-in-out infinite;
 }
@@ -290,7 +269,6 @@ function getOrbStyle(index) {
 }
 
 
-/* Scroll Indicator */
 .scroll-dot {
   animation: scrollBounce 2s infinite;
 }
@@ -304,7 +282,6 @@ function getOrbStyle(index) {
   }
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .title-char {
     font-size: 4rem;
@@ -313,5 +290,6 @@ function getOrbStyle(index) {
   .cta-button {
     @apply px-6 py-3;
   }
+
 }
 </style>

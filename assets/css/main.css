@@ -96,6 +96,8 @@ body {
 
 
 .bg-grid {
-  background: url('/assets/images/grid.png');
-  background-size: cover;
+  background: url('~/assets/images/grid.png');
+  background-size: auto;
+  background-repeat: repeat;
+  background-attachment: fixed;
 }
