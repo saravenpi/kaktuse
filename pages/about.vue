@@ -186,12 +186,8 @@
             <h4 class="font-semibold text-dark">Vue.js</h4>
           </div>
           <div class="bg-white rounded-xl p-6 text-center shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-200">
-            <Icon name="mdi:nuxt" class="text-green-400 mx-auto mb-3" size="3em" />
-            <h4 class="font-semibold text-dark">Nuxt</h4>
-          </div>
-          <div class="bg-white rounded-xl p-6 text-center shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-200">
-            <Icon name="mdi:tailwind" class="text-blue-500 mx-auto mb-3" size="3em" />
-            <h4 class="font-semibold text-dark">Tailwind</h4>
+            <Icon name="mdi:react" class="text-cyan-500 mx-auto mb-3" size="3em" />
+            <h4 class="font-semibold text-dark">React</h4>
           </div>
           <div class="bg-white rounded-xl p-6 text-center shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-200">
             <Icon name="mdi:language-typescript" class="text-blue-600 mx-auto mb-3" size="3em" />
@@ -204,6 +200,10 @@
           <div class="bg-white rounded-xl p-6 text-center shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-200">
             <Icon name="mdi:language-go" class="text-blue-400 mx-auto mb-3" size="3em" />
             <h4 class="font-semibold text-dark">Golang</h4>
+          </div>
+          <div class="bg-white rounded-xl p-6 text-center shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-200">
+            <Icon name="mdi:tailwind" class="text-blue-500 mx-auto mb-3" size="3em" />
+            <h4 class="font-semibold text-dark">Tailwind</h4>
           </div>
         </div>
       </section>
