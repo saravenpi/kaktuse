@@ -202,8 +202,8 @@
             <h4 class="font-semibold text-dark">Golang</h4>
           </div>
           <div class="bg-white rounded-xl p-6 text-center shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-200">
-            <Icon name="mdi:tailwind" class="text-blue-500 mx-auto mb-3" size="3em" />
-            <h4 class="font-semibold text-dark">Tailwind</h4>
+            <Icon name="simple-icons:elixir" class="text-purple-600 mx-auto mb-3" size="3em" />
+            <h4 class="font-semibold text-dark">Elixir</h4>
           </div>
         </div>
       </section>
