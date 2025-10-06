@@ -7,7 +7,7 @@
   },
   "home": {
     "title": "Kaktuse.",
-    "subtitle": "Créer des",
+    "subtitle": "Créer",
     "typewriter": {
       "impactful": "des sites web fiables",
       "modern": "des applications robustes",
@@ -155,3 +155,4 @@
     }
   }
 }
+
