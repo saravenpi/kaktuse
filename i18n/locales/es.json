@@ -1,0 +1,157 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "portfolio": "Portafolio",
+    "about": "Acerca de",
+    "contact": "Contacto"
+  },
+  "home": {
+    "title": "Kaktuse.",
+    "subtitle": "Crear",
+    "typewriter": {
+      "impactful": "sitios web confiables",
+      "modern": "aplicaciones robustas",
+      "scalable": "APIs de alto rendimiento",
+      "innovative": "soluciones prácticas",
+      "beautiful": "código mantenible"
+    },
+    "tagline": "Donde la innovación se encuentra con la creatividad en el mundo digital",
+    "cta": {
+      "view_work": "Ver Mi Trabajo",
+      "start_project": "Iniciar un Proyecto"
+    },
+    "stats": {
+      "projects": "Proyectos Open Source",
+      "years": "Años de Experiencia",
+      "response_time": "Tiempo de Respuesta"
+    }
+  },
+  "about": {
+    "title": "Acerca de Kaktuse",
+    "subtitle": "Creando experiencias digitales que florecen en el desierto digital",
+    "mission": {
+      "title": "Mi Misión",
+      "text1": "Soy un desarrollador fullstack con formación en IA, comprometido a proporcionar soluciones innovadoras y personalizadas para satisfacer las necesidades únicas de mis clientes.",
+      "text2": "Trabajo en colaboración con mis clientes para crear aplicaciones de alta calidad, escalables y fáciles de usar que generen resultados comerciales reales, centrándome en servicios descentralizados y un enfoque ecológico del desarrollo.",
+      "text3": "Me enorgullezco de mi compromiso con la excelencia, la atención al detalle y la satisfacción del cliente. Ya seas una startup o una empresa establecida, estoy aquí para ayudarte a alcanzar tus objetivos digitales."
+    },
+    "what_sets_apart": {
+      "title": "Lo que me distingue",
+      "personalized": "Enfoque Personalizado",
+      "ecological": "Enfoque Ecológico",
+      "clean_code": "Práctica de Código Limpio",
+      "communication": "Comunicación Directa"
+    },
+    "services": {
+      "title": "Mis Servicios",
+      "subtitle": "Soluciones completas para tus necesidades digitales",
+      "ai": {
+        "title": "Integración de IA",
+        "description": "Integra sin problemas la inteligencia artificial en tus aplicaciones para mejorar las funcionalidades, automatizar procesos y proporcionar experiencias de usuario inteligentes.",
+        "features": {
+          "ml": "Modelos de Aprendizaje Automático",
+          "nlp": "Procesamiento de Lenguaje Natural",
+          "analytics": "Análisis Basados en IA"
+        }
+      },
+      "web": {
+        "title": "Desarrollo de Sitios Web",
+        "description": "Crea sitios web modernos, responsivos y de alto rendimiento que ofrezcan experiencias de usuario excepcionales y impulsen el crecimiento empresarial.",
+        "features": {
+          "responsive": "Diseño Responsivo",
+          "seo": "Optimización SEO",
+          "performance": "Optimización de Rendimiento"
+        }
+      },
+      "mobile": {
+        "title": "Aplicaciones Móviles",
+        "description": "Desarrolla aplicaciones móviles nativas y multiplataforma que ofrezcan experiencias de usuario fluidas en todos los dispositivos y plataformas.",
+        "features": {
+          "cross_platform": "Desarrollo Multiplataforma",
+          "native": "Rendimiento Nativo",
+          "deployment": "Despliegue en App Store"
+        }
+      }
+    },
+    "about_me": {
+      "title": "Acerca de mí",
+      "subtitle": "El desarrollador detrás de Kaktuse",
+      "name": "Yann Thevenin",
+      "role": "Desarrollador Principal y Fundador",
+      "description": "Desarrollador fullstack con formación en IA, apasionado por crear experiencias digitales excepcionales con tecnologías modernas, arquitectura de código limpio y un enfoque ecológico del desarrollo."
+    },
+    "technologies": {
+      "title": "Tecnologías que utilizo",
+      "subtitle": "Herramientas modernas para soluciones modernas"
+    }
+  },
+  "portfolio": {
+    "title": "Portafolio",
+    "subtitle": "Descubre mis proyectos recientes",
+    "cta": {
+      "title": "¿Listo para crear algo increíble?",
+      "subtitle": "Transformemos tus ideas en realidad digital",
+      "start_project": "Iniciar un Proyecto",
+      "view_more": "Ver Más Proyectos"
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Creemos algo extraordinario juntos",
+    "methods": {
+      "email": {
+        "title": "Email",
+        "description": "Envíame un email para discutir tu proyecto"
+      },
+      "linkedin": {
+        "title": "LinkedIn",
+        "description": "Conectemos profesionalmente"
+      },
+      "github": {
+        "title": "GitHub",
+        "description": "Consulta mi código y contribuciones"
+      }
+    },
+    "quick_contact": {
+      "title": "Contacto Rápido",
+      "subtitle": "¿Necesitas una respuesta rápida? Usa una de estas opciones",
+      "email_button": "Enviar Email Rápido",
+      "schedule_button": "Programar una Llamada",
+      "response_time": "Tiempo de respuesta habitual: 24h"
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "q1": {
+        "question": "¿Qué tipos de proyectos aceptas?",
+        "answer": "Trabajo en una variedad de proyectos, desde sitios web simples hasta aplicaciones web complejas, pasando por integración de IA y aplicaciones móviles. Si tienes un proyecto digital en mente, ¡contáctame!"
+      },
+      "q2": {
+        "question": "¿Cuánto tiempo toma generalmente un proyecto?",
+        "answer": "Depende de la complejidad del proyecto. Un sitio web simple puede tomar 2-4 semanas, mientras que una aplicación web compleja puede tomar 2-6 meses. Siempre proporciono un cronograma detallado después de nuestra consulta inicial."
+      },
+      "q3": {
+        "question": "¿Ofreces mantenimiento después del lanzamiento?",
+        "answer": "Sí, ofrezco servicios de mantenimiento y soporte continuo para todos mis proyectos. Esto incluye actualizaciones, corrección de errores y mejoras de funcionalidades."
+      },
+      "q4": {
+        "question": "¿Trabajas con clientes internacionales?",
+        "answer": "¡Absolutamente! Trabajo con clientes de todo el mundo. Estoy disponible para videollamadas y comunicación por email en múltiples zonas horarias."
+      }
+    }
+  },
+  "meta": {
+    "home": {
+      "title": "Kaktuse - Crear soluciones web impactantes",
+      "description": "Kaktuse es una agencia de desarrollo web que crea soluciones web impactantes para empresas y startups."
+    },
+    "about": {
+      "title": "Kaktuse - Acerca de"
+    },
+    "portfolio": {
+      "title": "Kaktuse - Portafolio"
+    },
+    "contact": {
+      "title": "Kaktuse - Contacto"
+    }
+  }
+}

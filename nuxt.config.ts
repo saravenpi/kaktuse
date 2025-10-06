@@ -29,6 +29,12 @@ export default defineNuxtConfig({
         flag: "🇩🇪",
         file: "de.json",
       },
+      {
+        code: "es",
+        name: "Español",
+        flag: "🇪🇸",
+        file: "es.json",
+      },
     ],
     defaultLocale: "fr",
     strategy: "no_prefix",
